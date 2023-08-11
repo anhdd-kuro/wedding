@@ -17,7 +17,7 @@ export const FirstView = () => {
       }}
       fadeEffect={{ crossFade: true }}
       pagination={{ clickable: true }}
-      autoplay={{ delay: 5000 }}
+      autoplay={{ delay: 4000 }}
       modules={[Pagination, Autoplay, EffectFade, Keyboard]}
       centeredSlides
       loop

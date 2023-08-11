@@ -15,9 +15,14 @@
     @apply inline-flex flex-col bottom-8 right-8 left-auto w-[2.4rem] gap-3;
   }
 
-  .swiper-slide {
+  .swiper-slide:not(.swiper-slide-active) {
     .animate {
-      @apply animate-[zoom-out_8s_linear_both_infinite];
+      @apply animate-[zoom-in_6s_linear_both];
+    }
+  }
+  .swiper-slide-active {
+    .animate {
+      @apply animate-[zoom-in_6s_linear_both];
     }
   }
 }
