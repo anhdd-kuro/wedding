@@ -6,7 +6,6 @@ import { CustomCountDown } from "@/components/CountDown"
 import { Image } from "astro:assets"
 import logoImg from "~/assets/logo.png"
 import ducAnhThuyAnImg from "~/assets/duc_anh_thuy_an.png"
-import ducAnhThuyAnImg2x from "~/assets/duc_anh_thuy_an@2x.png"
 import envelope from "~/assets/envelope.png"
 import lookingForwardToSeeYouImg from "~/assets/looking_forward_to_see_you.png"
 import { Icon } from "astro-icon"
@@ -23,7 +22,6 @@ import { Icon } from "astro-icon"
       src={ducAnhThuyAnImg}
       height={26}
       alt="ĐỨC ANH & THÚY AN - 29.10.2023 - Daewoo Hotel Ha Noi"
-      srcset={`${ducAnhThuyAnImg2x.src} 2x 1400w`}
     />
   </h1>
   <strong
@@ -63,7 +61,7 @@ import { Icon } from "astro-icon"
     </button>
   </div>
   <div class="flex-center my-[4rem]">
-    <div class="glow-on-hover">
+    <div class="glowing-effect ringing-effect">
       <Image src={envelope} height={82} alt="Envelope" />
     </div>
   </div>

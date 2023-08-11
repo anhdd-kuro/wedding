@@ -6,7 +6,12 @@ module.exports = {
 		colors: {
 			green: {
 				DEFAULT: "#98A083",
-				light: "#E5E8DD",
+				100: "#E5E8DD",
+				200: "#F3F5EF",
+				300: "#E1EDC6",
+				400: "#B5CCAA",
+				500: "#98A083",
+				600: "#618053"
 			},
 			black: {
 				DEFAULT: "#333",
@@ -22,6 +27,7 @@ module.exports = {
 		fontFamily: {
 			roboto: ["Roboto", "sans-serif"],
 			lexend: ["Lexend", "sans-serif"],
+			cormorant: ["Cormorant Upright", "sans-serif"],
 		},
 		extend: {},
 		plugins: [],

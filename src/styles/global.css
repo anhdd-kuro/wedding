@@ -3,125 +3,221 @@
 @tailwind utilities;
 
 @layer base {
-	html {
-		font-size: 62.5%;
-		font-family: 'Lexend', sans-serif !important;
-	}
+  html {
+    font-size: 62.5%;
+    font-family: "Lexend", sans-serif !important;
+  }
 }
 
-@layer custom-utilities {
-	.flex-center {
-		@apply flex items-center justify-center;
-	}
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
 
-	[class*="border-b-after"]:not(.active) {
-		@apply relative;
+  [class*="border-b-after"]:not(.active) {
+    @apply relative;
 
-		&::after {
-			@apply content-[""] absolute w-0 h-[2px] -bottom-[2px] left-0;
-			@apply hover:w-full duration-300 transition-all;
-		}
-	}
+    &::after {
+      @apply content-[""] absolute w-0 h-[2px] -bottom-[2px] left-0;
+      @apply duration-300 transition-all;
+    }
 
-	.border-b-after--green,
-	.border-b-after {
-		&::after {
-			@apply bg-green;
-		}
-	}
+    &:hover {
+      @apply w-full;
+    }
+  }
+
+  .border-b-after--green,
+  .border-b-after {
+    &::after {
+      @apply bg-green;
+    }
+  }
+
+  .glowing-effect {
+    @apply relative cursor-pointer z-0 rounded-[10px] border-0;
+
+    &::before {
+      content: "";
+      background: linear-gradient(45deg,
+          rgb(226, 241, 214),
+          rgb(216, 240, 204),
+          rgb(206, 239, 194),
+          rgb(196, 238, 184),
+          rgb(186, 237, 174),
+          rgb(196, 238, 184),
+          rgb(206, 239, 194),
+          rgb(216, 240, 204),
+          rgb(226, 241, 214));
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(6px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing 20s linear infinite;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 10px;
+    }
+  }
+
+  .ringing-effect {
+    animation: bell-ring 5s linear infinite;
+  }
+
+  .heart-beating-effect {
+    animation: heart-beating 1.5s linear infinite;
+  }
 }
 
-@layer animation {
-	.glow-on-hover {
-		@apply relative cursor-pointer z-0 rounded-[10px] border-0 bg-green;
-		animation: bell-ring 5s linear infinite;
+@layer iframe {
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
 
-		&::before {
-			content: '';
-			background: linear-gradient(45deg, #d1e8d1, #d1e8d1, #d1e8d1, #d1e8d1, #d1e8d1, #d1e8d1, #d1e8d1, #d1e8d1, #d1e8d1, #d1e8d1);
-			position: absolute;
-			top: -3px;
-			left: -3px;
-			background-size: 400%;
-			z-index: -1;
-			filter: blur(5px);
-			width: calc(100% + 6px);
-			height: calc(100% + 6px);
-			animation: glowing 20s linear infinite;
-			transition: opacity .3s ease-in-out;
-			border-radius: 10px;
-		}
-	}
+    50% {
+      background-position: 400% 0;
+    }
 
-	@keyframes glowing {
-		0% {
-			background-position: 0 0;
-		}
+    100% {
+      background-position: 0 0;
+    }
+  }
 
-		50% {
-			background-position: 400% 0;
-		}
+  .text-glow {
+    @apply text-transparent;
+    -webkit-text-stroke: 1px #333;
 
-		100% {
-			background-position: 0 0;
-		}
-	}
+    &::before {
+      pointer-events: none;
+      content: attr(data-text);
+      position: absolute;
+      width: 0;
+      overflow: hidden;
+      transition: 0.3s;
+    }
 
-	.text-glow {
-		@apply text-transparent;
-		-webkit-text-stroke: 1px #333;
+    &:hover::before {
+      width: 100%;
+      filter: drop-shadow(0 0 25px var(--clr));
+    }
+  }
 
-		&::before {
-			pointer-events: none;
-			content: attr(data-text);
-			position: absolute;
-			width: 0;
-			overflow: hidden;
-			transition: 0.3s;
-		}
+  @keyframes zoom-in {
+    0% {
+      transform: scale(1);
+    }
 
-		&:hover::before {
-			width: 100%;
-			filter: drop-shadow(0 0 25px var(--clr))
-		}
-	}
+    100% {
+      transform: scale(1.12);
+    }
+  }
 
-	@keyframes zoom-in {
-		0% {
-			transform: scale(1);
-		}
-		100% {
-			transform: scale(1.12);
-		}
-	}
+  @keyframes zoom-out {
+    0% {
+      transform: scale(1.12);
+    }
 
-	@keyframes zoom-out {
-		0% {
-			transform: scale(1.12);
-		}
-		100% {
-			transform: scale(1);
-		}
-	}
+    100% {
+      transform: scale(1);
+    }
+  }
 
-	@keyframes bell-ring {
-		0% { transform: rotateZ(0); }
-		3% { transform: rotateZ(10deg); }
-		6% { transform: rotateZ(-8deg); }
-		9% { transform: rotateZ(6deg); }
-		12% { transform: rotateZ(-4deg); }
-		15% { transform: rotateZ(2deg); }
-		18% { transform: rotateZ(-1deg); }
-		21% { transform: rotateZ(1deg); }
-		24% { transform: rotateZ(0); }
-		27% { transform: rotateZ(10deg); }
-		30% { transform: rotateZ(-8deg); }
-		33% { transform: rotateZ(6deg); }
-		36% { transform: rotateZ(-4deg); }
-		39% { transform: rotateZ(2deg); }
-		42% { transform: rotateZ(-1deg); }
-		45% { transform: rotateZ(1deg); }
-		48% { transform: rotateZ(0); }
-		100% { transform: rotateZ(0); }
-	}
+  @keyframes bell-ring {
+    0% {
+      transform: rotateZ(0);
+    }
+
+    3% {
+      transform: rotateZ(10deg);
+    }
+
+    6% {
+      transform: rotateZ(-8deg);
+    }
+
+    9% {
+      transform: rotateZ(6deg);
+    }
+
+    12% {
+      transform: rotateZ(-4deg);
+    }
+
+    15% {
+      transform: rotateZ(2deg);
+    }
+
+    18% {
+      transform: rotateZ(-1deg);
+    }
+
+    21% {
+      transform: rotateZ(1deg);
+    }
+
+    24% {
+      transform: rotateZ(0);
+    }
+
+    27% {
+      transform: rotateZ(10deg);
+    }
+
+    30% {
+      transform: rotateZ(-8deg);
+    }
+
+    33% {
+      transform: rotateZ(6deg);
+    }
+
+    36% {
+      transform: rotateZ(-4deg);
+    }
+
+    39% {
+      transform: rotateZ(2deg);
+    }
+
+    42% {
+      transform: rotateZ(-1deg);
+    }
+
+    45% {
+      transform: rotateZ(1deg);
+    }
+
+    48% {
+      transform: rotateZ(0);
+    }
+
+    100% {
+      transform: rotateZ(0);
+    }
+  }
+
+  @keyframes heart-beating {
+    0% {
+      transform: scale(0.8);
+    }
+    5% {
+      transform: scale(0.9);
+    }
+    10% {
+      transform: scale(0.8);
+    }
+    15% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.8);
+    }
+    100% {
+      transform: scale(0.8);
+    }
+  }
 }

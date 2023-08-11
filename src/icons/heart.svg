@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="41" height="37.516" viewBox="0 0 41 37.516">
+  <defs>
+    <filter id="Path_25023" x="0" y="0" width="41" height="37.516" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_302" data-name="Group 302" transform="translate(-1371.5 -894.5)">
+    <g transform="matrix(1, 0, 0, 1, 1371.5, 894.5)" filter="url(#Path_25023)">
+      <path id="Path_25023-2" data-name="Path 25023" d="M1,111.674v-1.439c.019-.111.045-.221.056-.333a10.169,10.169,0,0,1,1.7-4.774,8.643,8.643,0,0,1,9.081-3.551,8.7,8.7,0,0,1,4.782,3.157c.121.149.238.3.372.474.146-.188.256-.339.375-.482a8.232,8.232,0,0,1,8.345-3.2,8.446,8.446,0,0,1,6.616,5.777,10.552,10.552,0,0,1-1.257,9.756,22.373,22.373,0,0,1-3.927,4.517c-2.928,2.617-5.9,5.185-8.863,7.761a1.857,1.857,0,0,1-2.651-.057q-3.422-2.947-6.832-5.907a35.39,35.39,0,0,1-5.282-5.437,12.2,12.2,0,0,1-2.178-4.391C1.188,112.93,1.11,112.3,1,111.674Z" transform="translate(3.5 -96.85)" fill="#fff"/>
+    </g>
+    <text id="TOP" transform="translate(1392 915)" fill="none" font-size="10" font-family="Lexend-Bold, Lexend" font-weight="700" letter-spacing="0.03em"><tspan x="-10" y="0">TOP</tspan></text>
+  </g>
+</svg>
