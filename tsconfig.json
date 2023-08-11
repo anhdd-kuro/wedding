@@ -1,11 +1,15 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   },
   "allowJs": true,
   "checkJs": false,
   "paths": {
-    "~/*": ["./src/*"]
-  },
+    "~/*": [
+      "./src/*"
+    ]
+  }
 }
