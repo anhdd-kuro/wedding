@@ -7,7 +7,7 @@
     mask-size: cover;
 
     &-active {
-      @apply bg-green;
+      @apply bg-black-light;
     }
   }
 
