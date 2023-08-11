@@ -33,11 +33,12 @@
 
 @layer animation {
 	.glow-on-hover {
-		@apply relative [outline:none] cursor-pointer z-0 rounded-[10px] border-0 bg-green;
+		@apply relative cursor-pointer z-0 rounded-[10px] border-0 bg-green;
+		animation: bell-ring 4s linear infinite;
 
 		&::before {
 			content: '';
-			background: linear-gradient(45deg, #a5d6a7, #a5d6a7, #a5d6a7, #a5d6a7, #a5d6a7, #73c6b6, #73c6b6, #73c6b6, #73c6b6, #73c6b6);
+			background: linear-gradient(45deg, #d1eec1, #d1eec1, #d1eec1, #d1eec1, #d1eec1, #a7c98f, #a7c98f, #a7c98f, #a7c98f, #d1eec1);
 			position: absolute;
 			top: -2px;
 			left: -2px;
@@ -83,5 +84,26 @@
 			width: 100%;
 			filter: drop-shadow(0 0 25px var(--clr))
 		}
+	}
+
+	@keyframes bell-ring {
+		0% { transform: rotateZ(0); }
+		3% { transform: rotateZ(10deg); }
+		6% { transform: rotateZ(-8deg); }
+		9% { transform: rotateZ(6deg); }
+		12% { transform: rotateZ(-4deg); }
+		15% { transform: rotateZ(2deg); }
+		18% { transform: rotateZ(-1deg); }
+		21% { transform: rotateZ(1deg); }
+		24% { transform: rotateZ(0); }
+		27% { transform: rotateZ(10deg); }
+		30% { transform: rotateZ(-8deg); }
+		33% { transform: rotateZ(6deg); }
+		36% { transform: rotateZ(-4deg); }
+		39% { transform: rotateZ(2deg); }
+		42% { transform: rotateZ(-1deg); }
+		45% { transform: rotateZ(1deg); }
+		48% { transform: rotateZ(0); }
+		100% { transform: rotateZ(0); }
 	}
 }
