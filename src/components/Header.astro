@@ -9,6 +9,7 @@ import ducAnhThuyAnImg from "~/assets/duc_anh_thuy_an.png"
 import ducAnhThuyAnImg2x from "~/assets/duc_anh_thuy_an@2x.png"
 import envelope from "~/assets/envelope.png"
 import lookingForwardToSeeYouImg from "~/assets/looking_forward_to_see_you.png"
+import { Icon } from "astro-icon"
 ---
 
 <header
@@ -52,7 +53,7 @@ import lookingForwardToSeeYouImg from "~/assets/looking_forward_to_see_you.png"
     </ul>
   </nav>
   <div
-    class="flex-center mt-[2.4rem] divide-x text-[1.6rem] font-light leading-none tracking-wider"
+    class="flex-center mb-[4rem] mt-[2.4rem] divide-x text-[1.6rem] font-light leading-none tracking-wider"
   >
     <button class="px-[2rem]">
       <span class="border-b-after">VN</span>
@@ -61,7 +62,7 @@ import lookingForwardToSeeYouImg from "~/assets/looking_forward_to_see_you.png"
       <span class="border-b-after">JP</span>
     </button>
   </div>
-  <div class="flex-center my-[4rem]">
+  <div class="flex-center mb-[4rem] mt-auto">
     <div class="glow-on-hover">
       <Image src={envelope} height={82} alt="Envelope" />
     </div>
@@ -79,9 +80,20 @@ import lookingForwardToSeeYouImg from "~/assets/looking_forward_to_see_you.png"
       timeZone: "Asia/Ho_Chi_Minh",
     })}
   />
-  <hr class="mx-auto mt-[4rem] h-1 w-[68px] text-green" />
-  <p class="mt-[1.8rem] text-center text-[1.2rem] tracking-widest text-green">
+  <hr class="mx-auto my-12 h-1 w-[68px] text-green" />
+  <p class="text-center text-[1.2rem] leading-loose tracking-widest text-green">
     Duc Anh & Thuy An Wedding <br />
-     29.10.2023. Ha Noi
+     29.10.2023.
+    <a
+      href="https://goo.gl/maps/yZWFhHm9bXvhWeoSA"
+      target="_blank"
+      class="inline-flex items-center gap-2 hover:text-black-light"
+    >
+      Deawoo Hotel Hà Nội <Icon
+        name="map-pin"
+        class="stroke-green"
+        height="18"
+      />
+    </a>
   </p>
 </header>

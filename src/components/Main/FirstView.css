@@ -1,0 +1,17 @@
+#main-slide {
+  .swiper-pagination-bullet {
+    width: 24px;
+    height: 24px;
+    -webkit-mask-image: url(/heart.svg);
+    mask-image: url(/heart.svg);
+    mask-size: cover;
+
+    &-active {
+      @apply bg-green;
+    }
+  }
+
+  .swiper-pagination {
+    @apply inline-flex flex-col bottom-8 right-8 left-auto w-[2.4rem] gap-3;
+  }
+}
