@@ -1,19 +1,23 @@
 ---
 import HeaderLink from "./HeaderLink.astro"
-import { SITE_TITLE } from "../consts"
+// import { SITE_TITLE } from "../consts"
 import { Image } from "astro:assets"
 import logoImg from "~/assets/logo.png"
+import logoImg2x from "~/assets/logo@2x.png"
 ---
 
-<header class="h-screen">
+<header class="h-screen px-12 py-16">
   <div>
-    <Image src={logoImg.src} alt="A/A" width={60} height={60} />
+    <Image
+      src={logoImg}
+      alt="A/A"
+      width={60}
+      height={60}
+      srcset={`${logoImg2x.src} 2x 1400w`}
+    />
   </div>
   <nav>
     <ul>
-      <li>
-        <a href="/" class="text-2xl font-bold">{{ SITE_TITLE }}</a>
-      </li>
       <li>
         <HeaderLink href="/about">About</HeaderLink>
       </li>
