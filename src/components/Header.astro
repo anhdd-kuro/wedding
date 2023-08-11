@@ -1,6 +1,6 @@
 ---
 // import { SITE_TITLE } from "../consts"
-import { CustomCountDown } from "./CountDown"
+import { CustomCountDown } from "@/components/CountDown"
 
 // Image
 import { Image } from "astro:assets"
@@ -11,7 +11,9 @@ import envelope from "~/assets/envelope.png"
 import lookingForwardToSeeYouImg from "~/assets/looking_forward_to_see_you.png"
 ---
 
-<header class="flex min-h-screen flex-col px-[3.2rem] py-[5rem]">
+<header
+  class="sticky left-0 top-0 flex min-h-screen flex-col px-[3.2rem] py-[5rem]"
+>
   <div class="flex-center">
     <Image src={logoImg} alt="A/A" width={60} height={60} />
   </div>
@@ -71,7 +73,12 @@ import lookingForwardToSeeYouImg from "~/assets/looking_forward_to_see_you.png"
       alt="Looking forward to see you!"
     />
   </p>
-  <CustomCountDown client:only />
+  <CustomCountDown
+    client:only
+    date={new Date("2023/10/29 18:00:00").toLocaleString("en-US", {
+      timeZone: "Asia/Ho_Chi_Minh",
+    })}
+  />
   <hr class="mx-auto mt-[4rem] h-1 w-[68px] text-green" />
   <p class="mt-[1.8rem] text-center text-[1.2rem] tracking-widest text-green">
     Duc Anh & Thuy An Wedding <br />

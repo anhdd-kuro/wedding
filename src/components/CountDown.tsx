@@ -1,15 +1,11 @@
 import type React from "react"
-import Countdown, { CountdownRendererFn } from "react-countdown"
+import Countdown from "react-countdown"
+import type { CountdownRendererFn } from "react-countdown"
 
-export const CustomCountDown: React.FC<{ date: Date }> = () => {
-  return (
-    <Countdown
-      date={new Date("2023/10/29 18:00:00").toLocaleString("en-US", {
-        timeZone: "Asia/Ho_Chi_Minh",
-      })}
-      renderer={renderer}
-    />
-  )
+export const CustomCountDown: React.FC<{ date: string | number | Date }> = ({
+  date,
+}) => {
+  return <Countdown date={date} renderer={renderer} />
 }
 
 const renderer: CountdownRendererFn = ({
