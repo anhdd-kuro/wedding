@@ -37,7 +37,7 @@
 
 		&::before {
 			content: '';
-			background: linear-gradient(45deg, #dcedc8, #c5e1a5, #f0f4c3, #e6fba1, #e5e8dd, #90caf9, #d1c4e9, #e1bee7, #ffe0b2, #f5f5f5);
+			background: linear-gradient(45deg, #a5d6a7, #a5d6a7, #a5d6a7, #a5d6a7, #a5d6a7, #73c6b6, #73c6b6, #73c6b6, #73c6b6, #73c6b6);
 			position: absolute;
 			top: -2px;
 			left: -2px;
