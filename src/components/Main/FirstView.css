@@ -14,4 +14,10 @@
   .swiper-pagination {
     @apply inline-flex flex-col bottom-8 right-8 left-auto w-[2.4rem] gap-3;
   }
+
+  .swiper-slide {
+    .animate {
+      @apply animate-[zoom-out_8s_linear_both_infinite];
+    }
+  }
 }

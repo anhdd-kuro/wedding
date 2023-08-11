@@ -28,7 +28,7 @@ export const FirstView = () => {
     >
       <SwiperSlide>
         <div
-          className="relative h-full w-full overflow-hidden"
+          className="animate relative h-full w-full overflow-hidden"
           style={{
             backgroundImage: "url(/main.jpg)",
             backgroundSize: "cover",
@@ -39,7 +39,7 @@ export const FirstView = () => {
       {["1", "2", "3", "4", "5"].map((item) => (
         <SwiperSlide key={item}>
           <div
-            className="relative h-full w-full overflow-hidden"
+            className="animate relative h-full w-full overflow-hidden"
             style={{
               backgroundImage: `url(/main_${item}.jpg)`,
               backgroundSize: "cover",
