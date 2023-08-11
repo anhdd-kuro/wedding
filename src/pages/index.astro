@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro"
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
+import { Swiper, SwiperSlide } from "swiper/react"
 ---
 
 <!DOCTYPE html>
@@ -18,6 +19,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
       <div class="col-span-4 grid grid-rows-3 gap-4">
         <main class="row-span-1">
           <!-- Main content goes here -->
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={3}
+            onSlideChange={() => console.log("slide change")}
+          >
+            <SwiperSlide>Slide 1</SwiperSlide>
+            <SwiperSlide>Slide 2</SwiperSlide>
+            <SwiperSlide>Slide 3</SwiperSlide>
+            <SwiperSlide>Slide 4</SwiperSlide>
+             ...
+          </Swiper>
         </main>
         <Footer class="row-span-1" />
       </div>
