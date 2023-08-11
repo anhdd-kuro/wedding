@@ -38,7 +38,7 @@
 
 		&::before {
 			content: '';
-			background: linear-gradient(45deg, #d1eec1, #d1eec1, #d1eec1, #d1eec1, #d1eec1, #a7c98f, #a7c98f, #a7c98f, #a7c98f, #d1eec1);
+			background: linear-gradient(45deg, #d1e8d1, #d1e8d1, #d1e8d1, #d1e8d1, #d1e8d1, #d1e8d1, #d1e8d1, #d1e8d1, #d1e8d1, #d1e8d1);
 			position: absolute;
 			top: -2px;
 			left: -2px;
