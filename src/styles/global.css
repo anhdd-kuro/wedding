@@ -1,3 +1,5 @@
+@layer custom-base;
+
 @layer custom-base {
 	body {
 		font-size: 62.5%;
