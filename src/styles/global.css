@@ -34,7 +34,7 @@
 @layer animation {
 	.glow-on-hover {
 		@apply relative cursor-pointer z-0 rounded-[10px] border-0 bg-green;
-		animation: bell-ring 4s linear infinite;
+		animation: bell-ring 5s linear infinite;
 
 		&::before {
 			content: '';
