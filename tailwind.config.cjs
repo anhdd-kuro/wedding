@@ -14,6 +14,9 @@ module.exports = {
 			},
 			white: {
 				DEFAULT: "#fff",
+			},
+			transparent: {
+				DEFAULT: "transparent",
 			}
 		},
 		fontFamily: {
