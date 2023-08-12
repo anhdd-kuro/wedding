@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets"
+import brideImg from "@/assets/bride.png"
+import groomImg from "@/assets/groom.png"
+import { Icon } from "astro-icon"
+---
+
+<section class="bg-green-200 px-[6.8rem] py-[10rem]">
+  <div class="flex-center gap-[1.6rem]">
+    <div class="glowing-effect before:rounded-[3rem] before:opacity-40">
+      <div
+        class="flex-center relative z-10 gap-[2.6rem] rounded-[3rem] bg-white px-[5rem] py-[3rem]"
+      >
+        <h2 class="text-right">
+          <strong class="font-cormorant text-[3.5rem] font-bold tracking-wider">
+            THUÝ AN
+          </strong>
+          <br />
+          <span
+            class="font-cormorant text-[1.6rem] font-bold tracking-wider text-green-600"
+          >
+            CÔ DÂU
+          </span>
+        </h2>
+        <Image
+          src={brideImg}
+          alt="Ảnh cô dâu Thuý An"
+          height="138"
+          class="rounded-full border-4 border-green-300"
+        />
+      </div>
+    </div>
+    <Icon
+      name="heart"
+      height={80}
+      class="heart-beating-effect [&_path]:fill-green-400"
+    />
+    <div class="glowing-effect before:rounded-[3rem] before:opacity-40">
+      <div
+        class="flex-center relative z-10 gap-[2.6rem] rounded-[3rem] bg-white px-[6rem] py-[3rem]"
+      >
+        <Image
+          src={groomImg}
+          alt="Ảnh chú rể Đức Anh"
+          height="138"
+          class="rounded-full border-4 border-green-300"
+        />
+        <h2>
+          <strong class="font-cormorant text-[3.5rem] font-bold tracking-wider">
+            ĐỨC ANH
+          </strong>
+          <br />
+          <span
+            class="font-cormorant text-[1.6rem] font-bold tracking-wider text-green-600"
+          >
+            CHỦ RỂ
+          </span>
+        </h2>
+      </div>
+    </div>
+  </div>
+  <p
+    class="mt-[4.5rem] text-center font-cormorant text-[6rem] font-semibold tracking-wider"
+  >
+    Are getting married !
+  </p>
+  <p class="mt-[1rem] text-center text-[2rem] font-light tracking-widest">
+    29.10.2023 - DAEWOO HOTEL HÀ NỘI
+  </p>
+</section>
