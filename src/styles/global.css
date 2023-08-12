@@ -6,6 +6,7 @@
   html {
     font-size: 62.5%;
     font-family: "Lexend", sans-serif !important;
+    scroll-behavior: smooth;
   }
 }
 
@@ -22,7 +23,7 @@
       @apply duration-300 transition-all;
     }
 
-    &:hover {
+    &:hover::after {
       @apply w-full;
     }
   }
@@ -30,7 +31,7 @@
   .border-b-after--green,
   .border-b-after {
     &::after {
-      @apply bg-green;
+      @apply bg-green-500;
     }
   }
 
@@ -204,18 +205,23 @@
     0% {
       transform: scale(0.8);
     }
+
     5% {
       transform: scale(0.9);
     }
+
     10% {
       transform: scale(0.8);
     }
+
     15% {
       transform: scale(1);
     }
+
     50% {
       transform: scale(0.8);
     }
+
     100% {
       transform: scale(0.8);
     }
