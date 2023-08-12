@@ -7,7 +7,6 @@ import { Image } from "astro:assets"
 import logoImg from "~/assets/logo.png"
 import ducAnhThuyAnImg from "~/assets/duc_anh_thuy_an.png"
 import envelope from "~/assets/envelope.png"
-import lookingForwardToSeeYouImg from "~/assets/looking_forward_to_see_you.png"
 import { Icon } from "astro-icon"
 ---
 
@@ -70,9 +69,7 @@ import { Icon } from "astro-icon"
   </p>
   <CustomCountDown
     client:only
-    date={new Date("2023/10/29 18:00:00").toLocaleString("en-US", {
-      timeZone: "Asia/Ho_Chi_Minh",
-    })}
+    date={new Date("2023/10/29 18:00:00 GMT+07:00")}
   />
   <hr class="mx-auto my-12 h-1 w-[68px] text-green" />
   <p class="text-center text-[1.2rem] leading-loose tracking-widest text-green">
