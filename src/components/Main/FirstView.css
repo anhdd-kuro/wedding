@@ -1,7 +1,7 @@
 #main-slide {
   .swiper-pagination-bullet {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
     -webkit-mask-image: url(/heart.svg);
     mask-image: url(/heart.svg);
     mask-size: cover;
@@ -12,7 +12,7 @@
   }
 
   .swiper-pagination {
-    @apply inline-flex flex-col bottom-8 right-8 left-auto w-[2.4rem] gap-3;
+    @apply top-auto translate-y-0 bottom-8 right-8;
   }
 
   .swiper-slide:not(.swiper-slide-active) {

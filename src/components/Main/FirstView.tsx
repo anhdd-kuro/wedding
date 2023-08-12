@@ -25,6 +25,7 @@ export const FirstView = () => {
       speed={2000}
       lazyPreloadPrevNext={1}
       className="h-screen min-h-[800px]"
+      direction={"vertical"}
     >
       <SwiperSlide>
         <div
