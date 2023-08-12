@@ -12,15 +12,15 @@
   }
 
   .swiper-pagination {
-    @apply top-auto translate-y-0 bottom-8 right-8;
+    @apply inline-flex flex-col bottom-16 right-12 left-auto w-[2.6rem];
   }
 
   .swiper-slide:not(.swiper-slide-active) {
     .animate {
-      @apply animate-[zoom-in_6s_linear_both];
+      @apply animate-[zoom-out_6s_linear_both];
     }
   }
-  .swiper-slide-active {
+  .swiper-slide-active, .swiper-slide-visible {
     .animate {
       @apply animate-[zoom-in_6s_linear_both];
     }
