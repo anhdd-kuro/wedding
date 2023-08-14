@@ -16,7 +16,7 @@
     @apply flex items-center justify-center;
   }
 
-  [class*="border-b-after"]:not(.active) {
+  [class*="border-b-after"] {
     @apply relative;
 
     &::after {
@@ -24,7 +24,7 @@
       @apply duration-300 transition-all;
     }
 
-    &:hover::after {
+    &:hover::after, &.active::after {
       @apply w-full;
     }
   }

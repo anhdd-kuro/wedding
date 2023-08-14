@@ -13,7 +13,7 @@ export const FirstView = () => {
       id="main-slide"
       slidesPerView={1}
       onSlideChange={() => {
-        console.log("slide change")
+        // console.log("slide change")
       }}
       fadeEffect={{ crossFade: true }}
       pagination={{ clickable: true }}

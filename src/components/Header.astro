@@ -28,24 +28,24 @@ import { Icon } from "astro-icon"
   >
     29.10.2023
   </strong>
-  <nav class="mt-[4rem]">
+  <nav id="sidebar-nav" class="mt-[4rem]">
     <ul
       class="flex-center flex-col gap-[2.4rem] text-[1.6rem] font-light leading-none tracking-wider"
     >
-      <li class="border-b-after pb-1">
-        <a href="#top">Top</a>
+      <li class="pb-1">
+        <a class="border-b-after" href="#main-slide">Top</a>
       </li>
-      <li class="border-b-after pb-1">
-        <a href="#our-story">Our story</a>
+      <li class="pb-1">
+        <a class="border-b-after" href="#our-story">Our story</a>
       </li>
-      <li class="border-b-after pb-1">
-        <a href="#timeline">Timeline</a>
+      <li class="pb-1">
+        <a class="border-b-after" href="#timeline">Timeline</a>
       </li>
-      <li class="border-b-after pb-1">
-        <a href="#gallery">Gallery</a>
+      <li class="pb-1">
+        <a class="border-b-after" href="#gallery">Gallery</a>
       </li>
-      <li class="border-b-after pb-1">
-        <a href="#map">Map & Contact Us</a>
+      <li class="pb-1">
+        <a class="border-b-after" href="#footer">QR Code Banking</a>
       </li>
     </ul>
   </nav>
@@ -88,3 +88,41 @@ import { Icon } from "astro-icon"
     </a>
   </p>
 </header>
+
+<script>
+  const sidebarNav = document.getElementById("sidebar-nav")
+  if (sidebarNav) {
+    const sidebarNavLinks = sidebarNav.querySelectorAll("a")
+    const sidebarNavLinksArray = Array.from(sidebarNavLinks)
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute("id")
+          const link = sidebarNavLinksArray.find(
+            (link) => link.getAttribute("href") === `#${id}`
+          )
+          if (!link) return
+
+          if (entry.intersectionRatio > 0) {
+            sidebarNavLinksArray.forEach((link) => {
+              link.classList.remove("active")
+            })
+            link.classList.add("active")
+
+            // update url
+            history.replaceState(null, "", `#${id}`)
+          }
+        })
+      },
+      {
+        rootMargin: "0px 0px -200px 0px",
+      }
+    )
+
+    // observe all sections
+    document.querySelectorAll("*[id]").forEach((section) => {
+      observer.observe(section)
+    })
+  }
+</script>
