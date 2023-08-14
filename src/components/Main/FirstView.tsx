@@ -39,12 +39,9 @@ export const FirstView = () => {
       {["1", "2", "3", "4", "5"].map((item) => (
         <SwiperSlide key={item}>
           <div
-            className="animate lazy-bg relative h-full w-full overflow-hidden"
+            className="animate lazy-bg relative h-full w-full overflow-hidden bg-cover bg-center"
             data-src={`/main_${item}.webp`}
-            style={{
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
+            suppressHydrationWarning={true}
           />
         </SwiperSlide>
       ))}

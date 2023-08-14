@@ -17,12 +17,14 @@
 
   .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-visible) {
     .animate {
-      @apply animate-[zoom-out_6s_linear_both];
+      transform: scale(1);
+      transition: transform 6s linear;
     }
   }
   .swiper-slide-active, .swiper-slide-visible {
     .animate {
-      @apply animate-[zoom-in_6s_linear_both];
+      transform: scale(1.15);
+      transition: transform 6s linear;
     }
   }
 }
