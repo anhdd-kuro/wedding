@@ -3,6 +3,7 @@ import { Image } from "astro:assets"
 import brideImg from "@/assets/bride.png"
 import groomImg from "@/assets/groom.png"
 import { Icon } from "astro-icon"
+import HeartFloating from "./HeartFloating.astro"
 ---
 
 <section class="bg-green-200 px-[6.8rem] py-[10rem]">
@@ -22,11 +23,15 @@ import { Icon } from "astro-icon"
             CÔ DÂU
           </span>
         </h2>
-        <Image
-          src={brideImg}
-          alt="Ảnh cô dâu Thuý An"
-          class="w-[13.8rem] rounded-full border-4 border-green-300"
-        />
+        <div class="relative">
+          <Image
+            data-src="brideImg"
+            src={brideImg}
+            alt="Ảnh cô dâu Thuý An"
+            class="w-[13.8rem] rounded-full border-4 border-green-300"
+          />
+          <HeartFloating />
+        </div>
       </div>
     </div>
     <Icon
@@ -37,12 +42,16 @@ import { Icon } from "astro-icon"
       <div
         class="relative z-10 flex items-center gap-[2.6rem] rounded-[3rem] bg-white px-[4rem] py-[3rem]"
       >
-        <Image
-          src={groomImg}
-          alt="Ảnh chú rể Đức Anh"
-          height="138"
-          class="rounded-full border-4 border-green-300"
-        />
+        <div class="relative">
+          <Image
+            data-src="groomImg"
+            src={groomImg}
+            alt="Ảnh chú rể Đức Anh"
+            height="138"
+            class="rounded-full border-4 border-green-300"
+          />
+          <HeartFloating />
+        </div>
         <h2>
           <strong class="font-cormorant text-[3.5rem] font-bold tracking-wider">
             ĐỨC ANH
@@ -66,3 +75,36 @@ import { Icon } from "astro-icon"
     29.10.2023 - DAEWOO HOTEL HÀ NỘI
   </p>
 </section>
+
+<script>
+  const brideImg = document.querySelector("[data-src=brideImg]")
+  const groomImg = document.querySelector("[data-src=groomImg]")
+  const brideHearts =
+    brideImg?.parentElement?.querySelectorAll(
+      "[data-selector=heart-floating]"
+    ) || []
+  const groomHearts =
+    groomImg?.parentElement?.querySelectorAll(
+      "[data-selector=heart-floating]"
+    ) || []
+
+  brideImg?.addEventListener("mouseover", () => {
+    Array.from(groomHearts).forEach((heart) => heart.classList.add("animated"))
+  })
+
+  brideImg?.addEventListener("mouseout", () => {
+    Array.from(groomHearts).forEach((heart) =>
+      heart.classList.remove("animated")
+    )
+  })
+
+  groomImg?.addEventListener("mouseover", () => {
+    Array.from(brideHearts).forEach((heart) => heart.classList.add("animated"))
+  })
+
+  groomImg?.addEventListener("mouseout", () => {
+    Array.from(brideHearts).forEach((heart) =>
+      heart.classList.remove("animated")
+    )
+  })
+</script>

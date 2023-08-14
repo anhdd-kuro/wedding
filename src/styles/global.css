@@ -207,7 +207,7 @@
 
   @keyframes move-clouds {
     0% {
-      bottom: 10px;
+      bottom: -10px;
     }
     100% {
       bottom: 110%;
@@ -223,10 +223,10 @@
     33% {
       transform: rotate(-5deg) translateX(30%);
       /* left: 0.7%; */
-      opacity: 0.6;
+      opacity: 0.5;
     }
     80% {
-      opacity: 0.6;
+      opacity: 0.8;
     }
     100% {
       transform: rotate(5deg);
