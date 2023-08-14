@@ -14,15 +14,36 @@ const galleries = await Astro.glob<{ default: ImageMetadata }>(
   >
     OUR MEMORIES
   </h2>
+  <div class="mt-[3rem] flex gap-4 text-[1.6rem]">
+    <button
+      data-script="filterAll"
+      class="bg-green-400 px-4 py-2 text-white hover:bg-green-400 hover:text-white"
+    >
+      Tất cả ảnh
+    </button>
+    <button
+      data-script="filterWesternStyle"
+      class="px-4 py-2 hover:bg-green-400 hover:text-white"
+    >
+      Phong cách phương tây
+    </button>
+    <button
+      data-script="filterJapanStyle"
+      class="px-4 py-2 hover:bg-green-400 hover:text-white"
+    >
+      Phong cách Nhật Bản
+    </button>
+  </div>
   <ul
-    class="mt-[4rem] flex h-[49rem] snap-x flex-col flex-wrap gap-[1.6rem] overflow-auto"
+    id="album"
+    class="mt-[4rem] flex h-[49rem] snap-x flex-col flex-wrap gap-[1.6rem] overflow-auto scroll-smooth"
   >
     {
-      galleries.map((gallery) => (
+      galleries.map((gallery, index) => (
         <li class="h-[22.5rem] w-[32rem] snap-start overflow-hidden bg-green-100/50">
           <Image
             src={gallery.default}
-            alt="ảnh cưới cô dâu chú rể"
+            alt={`ảnh cưới cô dâu chú rể ${index}`}
             class="relative left-1/2 h-full w-auto max-w-none -translate-x-1/2"
           />
         </li>
@@ -30,3 +51,65 @@ const galleries = await Astro.glob<{ default: ImageMetadata }>(
     }
   </ul>
 </section>
+
+<script>
+  const westImages = document.querySelectorAll("#gallery img[src*=west]")
+  const japanImages = document.querySelectorAll("#gallery img[src*=jap]")
+  const activeClasses = ["bg-green-400", "text-white"]
+
+  const filterWesternStyle = document.querySelector(
+    "[data-script=filterWesternStyle]"
+  )
+  const filterJapanStyle = document.querySelector(
+    "[data-script=filterJapanStyle]"
+  )
+  const filterAll = document.querySelector("[data-script=filterAll]")
+
+  const album = document.getElementById("album")
+
+  filterAll?.addEventListener("click", () => {
+    filterAll?.classList.add(...activeClasses)
+    filterJapanStyle?.classList.remove(...activeClasses)
+    filterWesternStyle?.classList.remove(...activeClasses)
+
+    for (const image of westImages) {
+      image?.parentElement?.classList.remove("hidden")
+    }
+    for (const image of japanImages) {
+      image?.parentElement?.classList.remove("hidden")
+    }
+
+    album?.scrollTo({ left: 0 })
+  })
+
+  filterWesternStyle?.addEventListener("click", () => {
+    filterWesternStyle?.classList.add(...activeClasses)
+    filterJapanStyle?.classList.remove(...activeClasses)
+    filterAll?.classList.remove(...activeClasses)
+
+    for (const image of westImages) {
+      image?.parentElement?.classList.remove("hidden")
+    }
+    for (const image of japanImages) {
+      image?.parentElement?.classList.add("hidden")
+    }
+
+    album?.scrollTo({ left: 0 })
+  })
+
+  filterJapanStyle?.addEventListener("click", () => {
+    filterJapanStyle?.classList.add(...activeClasses)
+    filterAll?.classList.remove(...activeClasses)
+    filterWesternStyle?.classList.remove(...activeClasses)
+    album?.scrollTo({ left: 0 })
+
+    for (const image of westImages) {
+      image?.parentElement?.classList.add("hidden")
+    }
+    for (const image of japanImages) {
+      image?.parentElement?.classList.remove("hidden")
+    }
+
+    album?.scrollTo({ left: 0 })
+  })
+</script>
