@@ -22,3 +22,14 @@ export const createDateAsUTC = (date: Date) => {
 export function range(size: number, startAt = 0, step = 1): number[] {
   return size > 0 ? [...Array(size).keys()].map((i) => i * step + startAt) : []
 }
+
+export function shuffleArray(array: any[]) {
+  const newArray = [...array]
+
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[newArray[i], newArray[j]] = [newArray[j], newArray[i]]
+  }
+
+  return newArray
+}

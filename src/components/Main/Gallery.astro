@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets"
 import type { ImageMetadata } from "astro"
+import { shuffleArray } from "~/utils"
 // import { range } from "~/utils"
 const galleries = await Astro.glob<{ default: ImageMetadata }>(
   "/src/assets/gallery/*.{png,jpg,jpeg}"
@@ -39,7 +40,7 @@ const galleries = await Astro.glob<{ default: ImageMetadata }>(
     class="mt-[4rem] flex h-[49rem] snap-x flex-col flex-wrap gap-[1.6rem] overflow-auto scroll-smooth"
   >
     {
-      galleries.map((gallery, index) => (
+      shuffleArray(galleries).map((gallery, index) => (
         <li class="h-[22.5rem] w-[32rem] snap-start overflow-hidden bg-green-100/50 transition-all duration-200">
           <Image
             src={gallery.default}
