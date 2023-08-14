@@ -40,7 +40,7 @@ const galleries = await Astro.glob<{ default: ImageMetadata }>(
   >
     {
       galleries.map((gallery, index) => (
-        <li class="h-[22.5rem] w-[32rem] snap-start overflow-hidden bg-green-100/50">
+        <li class="h-[22.5rem] w-[32rem] snap-start overflow-hidden bg-green-100/50 transition-all duration-200">
           <Image
             src={gallery.default}
             alt={`ảnh cưới cô dâu chú rể ${index}`}
@@ -67,16 +67,27 @@ const galleries = await Astro.glob<{ default: ImageMetadata }>(
 
   const album = document.getElementById("album")
 
+  const hide = (elm: Element) => {
+    elm?.parentElement?.classList.add("opacity-0")
+    setTimeout(() => {
+      elm?.parentElement?.classList.add("hidden")
+    }, 200)
+  }
+
+  const show = (elm: Element) => {
+    elm?.parentElement?.classList.remove("hidden", "opacity-0")
+  }
+
   filterAll?.addEventListener("click", () => {
     filterAll?.classList.add(...activeClasses)
     filterJapanStyle?.classList.remove(...activeClasses)
     filterWesternStyle?.classList.remove(...activeClasses)
 
     for (const image of westImages) {
-      image?.parentElement?.classList.remove("hidden")
+      show(image)
     }
     for (const image of japanImages) {
-      image?.parentElement?.classList.remove("hidden")
+      show(image)
     }
 
     album?.scrollTo({ left: 0 })
@@ -88,10 +99,10 @@ const galleries = await Astro.glob<{ default: ImageMetadata }>(
     filterAll?.classList.remove(...activeClasses)
 
     for (const image of westImages) {
-      image?.parentElement?.classList.remove("hidden")
+      show(image)
     }
     for (const image of japanImages) {
-      image?.parentElement?.classList.add("hidden")
+      hide(image)
     }
 
     album?.scrollTo({ left: 0 })
@@ -101,13 +112,12 @@ const galleries = await Astro.glob<{ default: ImageMetadata }>(
     filterJapanStyle?.classList.add(...activeClasses)
     filterAll?.classList.remove(...activeClasses)
     filterWesternStyle?.classList.remove(...activeClasses)
-    album?.scrollTo({ left: 0 })
 
     for (const image of westImages) {
-      image?.parentElement?.classList.add("hidden")
+      hide(image)
     }
     for (const image of japanImages) {
-      image?.parentElement?.classList.remove("hidden")
+      show(image)
     }
 
     album?.scrollTo({ left: 0 })
