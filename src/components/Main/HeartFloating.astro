@@ -14,7 +14,7 @@ const { count, delayMultiply } = Astro.props
       height={26}
       style={{
         left: `${getRandomInt(0, 80)}%`,
-        animationDelay: `${i * delayMultiply || 0.3}s`,
+        animationDelay: `${delayMultiply ? i * delayMultiply : i * 0.2}s`,
         opacity: 0,
         animationDuration: "1.5s",
       }}
