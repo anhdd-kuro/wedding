@@ -8,7 +8,10 @@ import HeartFloating from "./HeartFloating.astro"
 
 <section class="bg-green-200 px-[6.8rem] py-[10rem]">
   <div class="flex-center mx-auto max-w-[1200px] gap-[1.6rem]">
-    <div class="glowing-effect flex-1 before:rounded-[3rem] before:opacity-40">
+    <div
+      class="glowing-effect flex-1 before:rounded-[3rem] before:opacity-40"
+      data-selector="brideImg"
+    >
       <div
         class="relative z-10 flex items-center justify-end gap-[2.6rem] rounded-[3rem] bg-white px-[4rem] py-[3rem]"
       >
@@ -25,7 +28,6 @@ import HeartFloating from "./HeartFloating.astro"
         </h2>
         <div class="relative">
           <Image
-            data-src="brideImg"
             src={brideImg}
             alt="Ảnh cô dâu Thuý An"
             class="w-[13.8rem] rounded-full border-4 border-green-300"
@@ -38,13 +40,15 @@ import HeartFloating from "./HeartFloating.astro"
       name="heart"
       class="heart-beating-effect w-[5vw] max-w-[8rem] [&_path]:fill-green-400"
     />
-    <div class="glowing-effect flex-1 before:rounded-[3rem] before:opacity-40">
+    <div
+      class="glowing-effect flex-1 before:rounded-[3rem] before:opacity-40"
+      data-selector="groomImg"
+    >
       <div
         class="relative z-10 flex items-center gap-[2.6rem] rounded-[3rem] bg-white px-[4rem] py-[3rem]"
       >
         <div class="relative">
           <Image
-            data-src="groomImg"
             src={groomImg}
             alt="Ảnh chú rể Đức Anh"
             height="138"
@@ -77,16 +81,12 @@ import HeartFloating from "./HeartFloating.astro"
 </section>
 
 <script>
-  const brideImg = document.querySelector("[data-src=brideImg]")
-  const groomImg = document.querySelector("[data-src=groomImg]")
+  const brideImg = document.querySelector("[data-selector=brideImg]")
+  const groomImg = document.querySelector("[data-selector=groomImg]")
   const brideHearts =
-    brideImg?.parentElement?.querySelectorAll(
-      "[data-selector=heart-floating]"
-    ) || []
+    brideImg?.querySelectorAll("[data-selector=heart-floating]") || []
   const groomHearts =
-    groomImg?.parentElement?.querySelectorAll(
-      "[data-selector=heart-floating]"
-    ) || []
+    groomImg?.querySelectorAll("[data-selector=heart-floating]") || []
 
   brideImg?.addEventListener("mouseover", () => {
     Array.from(groomHearts).forEach((heart) => heart.classList.add("animated"))
