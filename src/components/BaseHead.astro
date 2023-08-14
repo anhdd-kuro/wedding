@@ -77,3 +77,20 @@ const { title, description, image = "/ogp.png" } = Astro.props
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Sentry -->
+<script>
+  import * as Sentry from "@sentry/browser"
+
+  Sentry.init({
+    dsn: "https://504e93adeb29b15966cf6f889b7c9392@o4504987250589696.ingest.sentry.io/4505703097892864",
+    tracesSampleRate: 1.0,
+    // This sets the sample rate to be 10%. You may want this to be 100% while
+    // in development and sample at a lower rate in production
+    replaysSessionSampleRate: 0.1,
+    // If the entire session is not sampled, use the below sample rate to sample
+    // sessions when an error occurs.
+    replaysOnErrorSampleRate: 1.0,
+    integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  })
+</script>

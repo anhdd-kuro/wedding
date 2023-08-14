@@ -9,7 +9,6 @@
       "@/*": [
         "src/*"
       ],
-      "@components/*": ["src/components/*"],
     },
     "strictNullChecks": true,
     "jsx": "react-jsx",
