@@ -38,16 +38,14 @@ export const FirstView = () => {
       </SwiperSlide>
       {["1", "2", "3", "4", "5"].map((item) => (
         <SwiperSlide key={item}>
-          <div className="animate relative h-full w-full overflow-hidden">
-            <picture className="flex h-full">
-              <img
-                src={`/main_${item}.webp`}
-                alt="main"
-                className="object-cover object-center"
-              />
-              <source srcSet={`/main_${item}.jpg`} type="image/jpeg" />
-            </picture>
-          </div>
+          <div
+            className="animate relative h-full w-full overflow-hidden"
+            style={{
+              backgroundImage: `/main_${item}.webp`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
         </SwiperSlide>
       ))}
     </Swiper>
