@@ -28,29 +28,5 @@ const galleries = await Astro.glob<{ default: ImageMetadata }>(
         </li>
       ))
     }
-    <!-- {
-      range(52, 1).map((i) => (
-        <li class="h-[22.5rem] w-[32rem] snap-start overflow-hidden bg-green-100/50">
-          <img
-            src={`/gallery/jap-${i}.jpg`}
-            alt={`ảnh cưới cô dâu chú rể ${i}`}
-            class="relative left-1/2 h-full max-w-none -translate-x-1/2"
-            loading="lazy"
-          />
-        </li>
-      ))
-    }
-    {
-      range(29, 1).map((i) => (
-        <li class="h-[22.5rem] w-[32rem] snap-start overflow-hidden bg-green-100/50">
-          <img
-            src={`/gallery/west-${i}.jpg`}
-            alt={`ảnh cưới cô dâu chú rể ${i}`}
-            class="relative left-1/2 h-full max-w-none -translate-x-1/2"
-            loading="lazy"
-          />
-        </li>
-      ))
-    } -->
   </ul>
 </section>
