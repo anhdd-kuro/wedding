@@ -17,7 +17,7 @@ export const FirstView = () => {
       }}
       fadeEffect={{ crossFade: true }}
       pagination={{ clickable: true }}
-      autoplay={{ delay: 4000 }}
+      // autoplay={{ delay: 4000 }}
       modules={[Pagination, Autoplay, EffectFade, Keyboard]}
       centeredSlides
       loop
@@ -30,7 +30,7 @@ export const FirstView = () => {
         <div
           className="animate relative h-full w-full overflow-hidden"
           style={{
-            backgroundImage: "url(/main.jpg)",
+            backgroundImage: "url(/main.webp), url(/main.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -38,14 +38,16 @@ export const FirstView = () => {
       </SwiperSlide>
       {["1", "2", "3", "4", "5"].map((item) => (
         <SwiperSlide key={item}>
-          <div
-            className="animate relative h-full w-full overflow-hidden"
-            style={{
-              backgroundImage: `url(/main_${item}.jpg)`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          />
+          <div className="animate relative h-full w-full overflow-hidden">
+            <picture className="flex h-full">
+              <img
+                src={`/main_${item}.webp`}
+                alt="main"
+                className="object-cover object-center"
+              />
+              <source srcSet={`/main_${item}.jpg`} type="image/jpeg" />
+            </picture>
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>

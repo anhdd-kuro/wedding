@@ -15,7 +15,7 @@
     @apply inline-flex flex-col bottom-16 right-12 left-auto w-[2.6rem] gap-3;
   }
 
-  .swiper-slide:not(.swiper-slide-active) {
+  .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-visible) {
     .animate {
       @apply animate-[zoom-out_6s_linear_both];
     }
@@ -26,3 +26,4 @@
     }
   }
 }
+
