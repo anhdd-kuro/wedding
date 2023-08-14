@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets"
+import type { ImageMetadata } from "astro"
+// import { range } from "~/utils"
+const galleries = await Astro.glob<{ default: ImageMetadata }>(
+  "/src/assets/gallery/*.{png,jpg,jpeg}"
+)
+---
+
+<section id="gallery" class="bg-white px-[5vw] py-[4vw]">
+  <h3 class="text-[2.2rem] tracking-[1.4rem] text-green-400">GALLERY</h3>
+  <h2
+    class="font-cormorant text-[4.8rem] leading-[1.4em] tracking-widest text-black-light"
+  >
+    OUR MEMORIES
+  </h2>
+  <ul
+    class="mt-[4rem] flex h-[49rem] snap-x flex-col flex-wrap gap-[1.6rem] overflow-auto"
+  >
+    {
+      galleries.map((gallery) => (
+        <li class="h-[22.5rem] w-[32rem] snap-start overflow-hidden bg-green-100/50">
+          <Image
+            src={gallery.default}
+            alt="ảnh cưới cô dâu chú rể"
+            class="relative left-1/2 h-full w-auto max-w-none -translate-x-1/2"
+          />
+        </li>
+      ))
+    }
+    <!-- {
+      range(52, 1).map((i) => (
+        <li class="h-[22.5rem] w-[32rem] snap-start overflow-hidden bg-green-100/50">
+          <img
+            src={`/gallery/jap-${i}.jpg`}
+            alt={`ảnh cưới cô dâu chú rể ${i}`}
+            class="relative left-1/2 h-full max-w-none -translate-x-1/2"
+            loading="lazy"
+          />
+        </li>
+      ))
+    }
+    {
+      range(29, 1).map((i) => (
+        <li class="h-[22.5rem] w-[32rem] snap-start overflow-hidden bg-green-100/50">
+          <img
+            src={`/gallery/west-${i}.jpg`}
+            alt={`ảnh cưới cô dâu chú rể ${i}`}
+            class="relative left-1/2 h-full max-w-none -translate-x-1/2"
+            loading="lazy"
+          />
+        </li>
+      ))
+    } -->
+  </ul>
+</section>

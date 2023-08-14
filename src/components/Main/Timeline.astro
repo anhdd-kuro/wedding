@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets"
+import beOurGuestImg from "@/assets/be-our-guest.png"
+import timelineImg1 from "@/assets/timeline-1.png"
+import timelineImg2 from "@/assets/timeline-2.png"
+import timelineImg3 from "@/assets/timeline-3.png"
+import timelineImg4 from "@/assets/timeline-4.png"
+import timelineImg5 from "@/assets/timeline-5.png"
+---
+
+<div class="overflow-hidden">
+  <Image
+    src={beOurGuestImg}
+    alt="Be Our Guest !"
+    class="relative left-1/2 mx-auto min-w-[1440px] -translate-x-1/2"
+  />
+</div>
+<section id="timeline" class="bg-green-200 px-[5vw] py-[4vw]">
+  <div class="container mx-auto">
+    <h3 class="text-[2.2rem] tracking-[1.4rem] text-green-400">WEDDING</h3>
+    <h2
+      class="font-cormorant text-[4.8rem] leading-[1.4em] tracking-widest text-black-light"
+    >
+      TIMELINE
+    </h2>
+    <ol class="mt-[4rem] flex max-w-[1440px]">
+      <li class="flex-1">
+        <Image
+          src={timelineImg1}
+          alt="13:30 Lễ đón dâu được tổ chức tại tư gia nhà gái"
+        />
+      </li>
+      <li class="flex-1">
+        <Image
+          src={timelineImg2}
+          alt="15:00 Lễ thành hôn được tổ chức tại tư gia nhà trai"
+        />
+      </li>
+      <li class="flex-1">
+        <Image
+          src={timelineImg3}
+          alt="17:30 Checkin và đón khách tại Daehoo hotel"
+        />
+      </li>
+      <li class="flex-1">
+        <Image
+          src={timelineImg4}
+          alt="18:00 Tiệc cưới bắt đầu, rút thăm may mắn"
+        />
+      </li>
+      <li class="flex-1">
+        <Image src={timelineImg5} alt="19:30 Tung hoa, kết thúc lễ cưới" />
+      </li>
+    </ol>
+  </div>
+</section>

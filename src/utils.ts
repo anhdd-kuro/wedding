@@ -6,7 +6,7 @@ export const convertTZ = (date: Date, tzString: string) => {
   )
 }
 
-export const createDateAsUTC = (date) => {
+export const createDateAsUTC = (date: Date) => {
   return new Date(
     Date.UTC(
       date.getFullYear(),
@@ -17,4 +17,8 @@ export const createDateAsUTC = (date) => {
       date.getSeconds()
     )
   )
+}
+
+export function range(size: number, startAt = 0, step = 1): number[] {
+  return size > 0 ? [...Array(size).keys()].map((i) => i * step + startAt) : []
 }
