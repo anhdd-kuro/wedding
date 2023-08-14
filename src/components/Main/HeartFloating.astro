@@ -1,10 +1,12 @@
 ---
 import { Icon } from "astro-icon"
 import { range, getRandomInt } from "~/utils"
+
+const { count, delayMultiply } = Astro.props
 ---
 
 {
-  range(5, 0).map((i) => (
+  range(count || 5, 0).map((i) => (
     <Icon
       data-selector="heart-floating"
       name="heart"
@@ -12,7 +14,7 @@ import { range, getRandomInt } from "~/utils"
       height={26}
       style={{
         left: `${getRandomInt(0, 80)}%`,
-        animationDelay: `${i * 0.3}s`,
+        animationDelay: `${i * delayMultiply || 0.3}s`,
         opacity: 0,
         animationDuration: "1.5s",
       }}
