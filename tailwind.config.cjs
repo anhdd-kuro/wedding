@@ -30,6 +30,11 @@ module.exports = {
 			lexend: ["Lexend", "sans-serif"],
 			cormorant: ["Cormorant Upright", "sans-serif"],
 		},
+		screens: {
+			"sm": "768px",
+			"pc": "1024px",
+			"pc-lg": "1440px"
+		},
 		extend: {},
 		plugins: [],
 	}
