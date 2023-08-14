@@ -95,6 +95,15 @@ import { Icon } from "astro-icon"
     const sidebarNavLinks = sidebarNav.querySelectorAll("a")
     const sidebarNavLinksArray = Array.from(sidebarNavLinks)
 
+    sidebarNavLinksArray.forEach((link) => {
+      link.addEventListener("click", () => {
+        sidebarNavLinksArray.forEach((link) => {
+          link.classList.remove("active")
+        })
+        link.classList.add("active")
+      })
+    })
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -110,7 +119,6 @@ import { Icon } from "astro-icon"
             })
             link.classList.add("active")
 
-            // update url
             history.replaceState(null, "", `#${id}`)
           }
         })
