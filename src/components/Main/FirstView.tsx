@@ -17,7 +17,7 @@ export const FirstView = () => {
       }}
       fadeEffect={{ crossFade: true }}
       pagination={{ clickable: true }}
-      // autoplay={{ delay: 4000 }}
+      autoplay={{ delay: 4000 }}
       modules={[Pagination, Autoplay, EffectFade, Keyboard]}
       centeredSlides
       loop
@@ -39,9 +39,9 @@ export const FirstView = () => {
       {["1", "2", "3", "4", "5"].map((item) => (
         <SwiperSlide key={item}>
           <div
-            className="animate relative h-full w-full overflow-hidden"
+            className="animate lazy-bg relative h-full w-full overflow-hidden"
+            data-src={`/main_${item}.webp`}
             style={{
-              backgroundImage: `/main_${item}.webp`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
