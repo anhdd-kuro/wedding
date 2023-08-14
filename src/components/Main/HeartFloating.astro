@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon"
+import { range, getRandomInt } from "~/utils"
+---
+
+{
+  range(5, 0).map((i) => (
+    <Icon
+      name="heart"
+      class="group-hover:floating-effect absolute duration-200 [&_path]:fill-green-400"
+      height={24}
+      style={{
+        left: `${getRandomInt(0, 80)}%`,
+        animationDelay: `${i * 0.3}s`,
+        opacity: 0,
+        animationDuration: "1.5s",
+      }}
+      data-i={i}
+    />
+  ))
+}

@@ -6,6 +6,7 @@ import timelineImg2 from "@/assets/timeline-2.png"
 import timelineImg3 from "@/assets/timeline-3.png"
 import timelineImg4 from "@/assets/timeline-4.png"
 import timelineImg5 from "@/assets/timeline-5.png"
+import HeartFloating from "./HeartFloating.astro"
 ---
 
 <div class="overflow-hidden">
@@ -24,32 +25,37 @@ import timelineImg5 from "@/assets/timeline-5.png"
       TIMELINE
     </h2>
     <ol class="mt-[4rem] flex max-w-[1440px]">
-      <li class="flex-1">
+      <li class="group relative flex-1 cursor-context-menu">
         <Image
           src={timelineImg1}
           alt="13:30 Lễ đón dâu được tổ chức tại tư gia nhà gái"
         />
+        <HeartFloating />
       </li>
-      <li class="flex-1">
+      <li class="group relative flex-1 cursor-context-menu">
         <Image
           src={timelineImg2}
           alt="15:00 Lễ thành hôn được tổ chức tại tư gia nhà trai"
         />
+        <HeartFloating />
       </li>
-      <li class="flex-1">
+      <li class="group relative flex-1 cursor-context-menu">
         <Image
           src={timelineImg3}
           alt="17:30 Checkin và đón khách tại Daehoo hotel"
         />
+        <HeartFloating />
       </li>
-      <li class="flex-1">
+      <li class="group relative flex-1 cursor-context-menu">
         <Image
           src={timelineImg4}
           alt="18:00 Tiệc cưới bắt đầu, rút thăm may mắn"
         />
+        <HeartFloating />
       </li>
-      <li class="flex-1">
+      <li class="group relative flex-1 cursor-context-menu">
         <Image src={timelineImg5} alt="19:30 Tung hoa, kết thúc lễ cưới" />
+        <HeartFloating />
       </li>
     </ol>
   </div>
