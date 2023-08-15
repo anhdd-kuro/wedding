@@ -11,8 +11,11 @@
     }
   }
 
-  .swiper-pagination {
-    @apply inline-flex flex-col bottom-16 right-12 left-auto w-[2.6rem] gap-3;
+
+  @screen pc {
+    .swiper-pagination {
+      @apply inline-flex flex-col bottom-16 right-12 left-auto w-[2.6rem] gap-3;
+    }
   }
 
   .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-visible) {

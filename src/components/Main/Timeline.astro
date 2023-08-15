@@ -24,48 +24,64 @@ const lang = getLangFromUrl(Astro.url)
 </div>
 <section id="timeline" class="bg-green-200 px-[5vw] py-[4vw]">
   <div class="container mx-auto">
-    <h3 class="text-[2.2rem] tracking-[1.4rem] text-green-400">WEDDING</h3>
+    <h3 class="text-[1.6rem] tracking-[1.4rem] text-green-400 pc:text-[2.2rem]">
+      WEDDING
+    </h3>
     <h2
-      class="font-cormorant text-[4.8rem] leading-[1.4em] tracking-widest text-black-light"
+      class="font-cormorant text-[3.2rem] leading-[1.4em] tracking-widest text-black-light pc:text-[4.8rem]"
     >
       TIMELINE
     </h2>
-    <ol class="mt-[4rem] flex max-w-[1440px]">
-      <li class="group relative flex-1 cursor-context-menu">
-        <Image
-          src={lang === "vi" ? timeline[0]?.default : timelineJa[0]?.default}
-          alt="13:30 Lễ đón dâu được tổ chức tại tư gia nhà gái"
-        />
-        <HeartFloating count={6} delayMultiply={0.2} />
-      </li>
-      <li class="group relative flex-1 cursor-context-menu">
-        <Image
-          src={lang === "vi" ? timeline[1]?.default : timelineJa[1]?.default}
-          alt="15:00 Lễ thành hôn được tổ chức tại tư gia nhà trai"
-        />
-        <HeartFloating count={6} delayMultiply={0.2} />
-      </li>
-      <li class="group relative flex-1 cursor-context-menu">
-        <Image
-          src={lang === "vi" ? timeline[2]?.default : timelineJa[2]?.default}
-          alt="17:30 Checkin và đón khách tại Daehoo hotel"
-        />
-        <HeartFloating count={6} delayMultiply={0.2} />
-      </li>
-      <li class="group relative flex-1 cursor-context-menu">
-        <Image
-          src={lang === "vi" ? timeline[3]?.default : timelineJa[3]?.default}
-          alt="18:00 Tiệc cưới bắt đầu, rút thăm may mắn"
-        />
-        <HeartFloating count={6} delayMultiply={0.2} />
-      </li>
-      <li class="group relative flex-1 cursor-context-menu">
-        <Image
-          src={lang === "vi" ? timeline[4]?.default : timelineJa[4]?.default}
-          alt="19:30 Tung hoa, kết thúc lễ cưới"
-        />
-        <HeartFloating count={6} delayMultiply={0.2} />
-      </li>
-    </ol>
+    <div
+      class="mt-[2rem] snap-x overflow-x-auto overflow-y-hidden pc:mt-[4rem] pc:max-w-[1440px]"
+    >
+      <ol class="flex w-[80rem] pc:w-auto">
+        <li
+          class="group relative w-1/2 cursor-context-menu snap-start pc:flex-1"
+        >
+          <Image
+            src={lang === "vi" ? timeline[0]?.default : timelineJa[0]?.default}
+            alt="13:30 Lễ đón dâu được tổ chức tại tư gia nhà gái"
+          />
+          <HeartFloating count={6} delayMultiply={0.2} />
+        </li>
+        <li
+          class="group relative w-1/2 cursor-context-menu snap-start pc:flex-1"
+        >
+          <Image
+            src={lang === "vi" ? timeline[1]?.default : timelineJa[1]?.default}
+            alt="15:00 Lễ thành hôn được tổ chức tại tư gia nhà trai"
+          />
+          <HeartFloating count={6} delayMultiply={0.2} />
+        </li>
+        <li
+          class="group relative w-1/2 cursor-context-menu snap-start pc:flex-1"
+        >
+          <Image
+            src={lang === "vi" ? timeline[2]?.default : timelineJa[2]?.default}
+            alt="17:30 Checkin và đón khách tại Daehoo hotel"
+          />
+          <HeartFloating count={6} delayMultiply={0.2} />
+        </li>
+        <li
+          class="group relative w-1/2 cursor-context-menu snap-start pc:flex-1"
+        >
+          <Image
+            src={lang === "vi" ? timeline[3]?.default : timelineJa[3]?.default}
+            alt="18:00 Tiệc cưới bắt đầu, rút thăm may mắn"
+          />
+          <HeartFloating count={6} delayMultiply={0.2} />
+        </li>
+        <li
+          class="group relative w-1/2 cursor-context-menu snap-start pc:flex-1"
+        >
+          <Image
+            src={lang === "vi" ? timeline[4]?.default : timelineJa[4]?.default}
+            alt="19:30 Tung hoa, kết thúc lễ cưới"
+          />
+          <HeartFloating count={6} delayMultiply={0.2} />
+        </li>
+      </ol>
+    </div>
   </div>
 </section>

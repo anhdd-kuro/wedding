@@ -5,7 +5,7 @@
 @layer base {
   html {
     @apply text-black scroll-smooth;
-    @apply text-[0.69vw] pc-lg:text-[62.5%];
+    @apply text-[2.6vw] pc:text-[0.69vw] pc-lg:text-[62.5%];
 
     &, &[lang="vi"] {
       @apply font-lexend;

@@ -10,17 +10,21 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<section class="bg-green-200 px-[6.8rem] py-[10rem]">
-  <div class="flex-center mx-auto max-w-[1200px] gap-[1.6rem]">
+<section class="bg-green-200 px-[2rem] py-[3rem] pc:px-[6.8rem] pc:py-[10rem]">
+  <div
+    class="flex-center mx-auto flex-col gap-[1.6rem] pc:max-w-[1200px] pc:flex-row"
+  >
     <div
       class="glowing-effect flex-1 before:rounded-[3rem] before:opacity-40"
       data-selector="brideImg"
     >
       <div
-        class="relative z-10 flex items-center justify-end gap-[2.6rem] rounded-[3rem] bg-white px-[4rem] py-[3rem]"
+        class="relative z-10 flex flex-row-reverse items-center justify-end gap-[2.6rem] rounded-[3rem] bg-white px-[4rem] py-[3rem] pc:flex-row"
       >
-        <h2 class="text-right">
-          <strong class="font-cormorant text-[3.5rem] font-bold tracking-wider">
+        <h2 class="pc:text-right">
+          <strong
+            class="font-cormorant text-[2rem] font-bold tracking-wider pc:text-[3.5rem]"
+          >
             THUÝ AN
           </strong>
           <br />
@@ -42,7 +46,7 @@ const t = useTranslations(lang)
     </div>
     <Icon
       name="heart"
-      class="heart-beating-effect w-[5vw] max-w-[8rem] [&_path]:fill-green-400"
+      class="heart-beating-effect w-1/5 max-w-[8rem] pc:w-[5vw] [&_path]:fill-green-400"
     />
     <div
       class="glowing-effect flex-1 before:rounded-[3rem] before:opacity-40"
@@ -61,7 +65,9 @@ const t = useTranslations(lang)
           <HeartFloating />
         </div>
         <h2>
-          <strong class="font-cormorant text-[3.5rem] font-bold tracking-wider">
+          <strong
+            class="font-cormorant text-[2rem] font-bold tracking-wider pc:text-[3.5rem]"
+          >
             ĐỨC ANH
           </strong>
           <br />
@@ -75,11 +81,13 @@ const t = useTranslations(lang)
     </div>
   </div>
   <p
-    class="mt-[4.5rem] text-center font-cormorant text-[6rem] font-semibold tracking-wider"
+    class="mt-[2rem] text-center font-cormorant text-[3rem] font-semibold tracking-wider pc:mt-[4.5rem] pc:text-[6rem]"
   >
     Are getting married !
   </p>
-  <p class="mt-[1rem] text-center text-[2rem] font-light tracking-widest">
+  <p
+    class="mt-[1rem] text-center text-[1.6rem] font-light tracking-widest pc:text-[2rem]"
+  >
     29.10.2023 - DAEWOO HOTEL HÀ NỘI
   </p>
 </section>

@@ -28,10 +28,12 @@ export async function getStaticPaths() {
 
 <BaseLayout>
   <div class="grid h-screen grid-cols-[minmax(350px,20%)_auto_auto_auto_auto]">
-    <div class="col-span-1 bg-green-100">
+    <div
+      class="fixed left-0 top-0 hidden bg-green-100 pc:relative pc:col-span-1 pc:block"
+    >
       <Header title={SITE_TITLE} />
     </div>
-    <div class="col-span-4 min-w-full">
+    <div class="col-span-5 min-w-full pc:col-span-4">
       <Main />
       <Footer class="" />
     </div>

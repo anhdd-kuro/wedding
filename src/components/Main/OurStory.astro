@@ -8,9 +8,9 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<section id="our-story" class="bg-white px-[6rem] py-[8rem]">
-  <div class="mx-auto flex max-w-[1260px] gap-[3.5rem]">
-    <div class="w-1/2 max-w-[48rem]">
+<section id="our-story" class="bg-white pc:px-[6rem] pc:py-[8rem]">
+  <div class="mx-auto max-w-[1260px] gap-[3.5rem] pc:flex">
+    <div class="w-full max-w-[48rem] pc:w-1/2">
       <Image src={ourStoryImg} alt="Ảnh our story" class="w-full" />
     </div>
     <div
@@ -19,28 +19,40 @@ const t = useTranslations(lang)
         lang !== "ja" ? "text-[1.4rem]" : "text-[1.6rem]"
       )}
     >
-      <h3 class="text-[2.2rem] tracking-[1.4rem] text-green-400">OUR LOVE</h3>
-      <h2 class="font-cormorant text-[4.8rem] leading-[1.4em] text-black-light">
-        OUR STORY
-      </h2>
-      <p class="mt-2">
-        • 2014 <br />
-        {t("story-1")}, <br />
-        {t("story-2")}
-        <br />
-         • 2017 <br />
-        {t("story-2")}<br />
-         • 2019 - {t("covid")}
-        <br />
-        {t("story-3")}
-        <br />
-         • 2021 <br />
-        {t("story-4")}
-      </p>
-      <p class="my-6 text-[2rem] font-semibold">17.11.2022, We Said Yes! ❤️</p>
-      <p>
-        {t("story-5")}
-      </p>
+      <div class="mt-[2rem] text-center pc:mt-0 pc:text-left">
+        <h3
+          class="text-[1.6rem] tracking-[1.4rem] text-green-400 pc:text-[2.2rem]"
+        >
+          OUR LOVE
+        </h3>
+        <h2
+          class="font-cormorant text-[3.2rem] leading-[1.4em] text-black-light pc:text-[4.8rem]"
+        >
+          OUR STORY
+        </h2>
+      </div>
+      <div class="mt-2 p-[2rem] pc:p-0">
+        <p class="">
+          • 2014 <br />
+          {t("story-1")}, <br />
+          {t("story-2")}
+          <br />
+           • 2017 <br />
+          {t("story-2")}<br />
+           • 2019 - {t("covid")}
+          <br />
+          {t("story-3")}
+          <br />
+           • 2021 <br />
+          {t("story-4")}
+        </p>
+        <p class="my-6 text-[2rem] font-semibold">
+          17.11.2022, We Said Yes! ❤️
+        </p>
+        <p>
+          {t("story-5")}
+        </p>
+      </div>
     </div>
   </div>
 </section>
