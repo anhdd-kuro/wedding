@@ -1,6 +1,7 @@
 ---
 // import { SITE_TITLE } from "../consts"
 import { CustomCountDown } from "@/components/CountDown"
+import { getLangFromUrl } from "@/i18n/utils"
 
 // Image
 import { Image } from "astro:assets"
@@ -10,6 +11,8 @@ import envelope from "~/assets/envelope.png"
 import { Icon } from "astro-icon"
 import Modal from "./Modal.astro"
 import Envelope from "./Envelope.astro"
+
+const lang = getLangFromUrl(Astro.url)
 ---
 
 <Modal modalTriggerSelector="envelope">
@@ -60,12 +63,12 @@ import Envelope from "./Envelope.astro"
   <div
     class="flex-center mb-[4rem] mt-[2.4rem] divide-x text-[1.6rem] font-light leading-none tracking-wider"
   >
-    <button class="px-[2rem]">
-      <span class="border-b-after">VN</span>
-    </button>
-    <button class="px-[2rem]">
-      <span class="border-b-after">JP</span>
-    </button>
+    <a href="/" class="px-[2rem]">
+      <span class="border-b-after">VI</span>
+    </a>
+    <a href="/ja/" class="px-[2rem]">
+      <span class="border-b-after">JA</span>
+    </a>
   </div>
   <div class="flex-center my-[4rem]">
     <div class="glowing-effect ringing-effect" data-selector="envelope">
@@ -78,6 +81,7 @@ import Envelope from "./Envelope.astro"
   <CustomCountDown
     client:only
     date={new Date("2023/10/29 18:00:00 GMT+07:00")}
+    lang={lang}
   />
   <hr class="mx-auto my-12 h-1 w-[68px] text-green" />
   <p class="text-center text-[1.2rem] leading-loose tracking-widest text-green">

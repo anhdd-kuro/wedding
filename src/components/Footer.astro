@@ -2,6 +2,10 @@
 import { Image } from "astro:assets"
 import artImg from "@/assets/art.png"
 import { Icon } from "astro-icon"
+import { getLangFromUrl, useTranslations } from "~/i18n/utils"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <footer id="footer" class="bg-green-200 px-[5vw] py-[4vw]">
@@ -11,7 +15,7 @@ import { Icon } from "astro-icon"
     </div>
     <div>
       <h2 class="text-semibold text-black-drak text-[1.8rem]">
-        QUÉT QR MỪNG HẠNH PHÚC CHO CÔ DÂU CHÚ RỂ!
+        {t("qr")}
       </h2>
       <hr class="mt-[1rem] w-[10rem] border-[1px]" />
       <ul class="mt-[5rem] flex w-full gap-[5rem] tracking-wider">
@@ -22,7 +26,7 @@ import { Icon } from "astro-icon"
             tittle="QR Code tài khoản ngân hàng cô đâu"
           />
           <p class="text-[1.4rem]">
-            <strong class="text-[1.6rem] font-bold">CÔ DÂU</strong>
+            <strong class="text-[1.6rem] font-bold">{t("bridge")}</strong>
             <br />
              NGUYỄN THỊ THUÝ AN <br />
              19034502550015 <br />
@@ -36,7 +40,9 @@ import { Icon } from "astro-icon"
             tittle="QR Code tài khoản ngân hàng cô đâu"
           />
           <p class="text-[1.4rem]">
-            <strong class="text-[1.6rem] font-bold">CHÚ RỂ</strong>
+            <strong class="text-[1.6rem] font-bold">
+              {t("groom")}
+            </strong>
             <br />
              DƯƠNG ĐỨC ANH
             <br />

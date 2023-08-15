@@ -33,6 +33,7 @@ module.exports = {
 			roboto: ["Roboto", "sans-serif"],
 			lexend: ["Lexend", "sans-serif"],
 			cormorant: ["Cormorant Upright", "sans-serif"],
+			ja: ["Lexend", 'Zen Kaku Gothic New', "sans-serif"]
 		},
 		screens: {
 			"sm": "768px",

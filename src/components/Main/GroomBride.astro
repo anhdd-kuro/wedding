@@ -4,6 +4,10 @@ import brideImg from "@/assets/bride.png"
 import groomImg from "@/assets/groom.png"
 import { Icon } from "astro-icon"
 import HeartFloating from "./HeartFloating.astro"
+import { getLangFromUrl, useTranslations } from "~/i18n/utils"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <section class="bg-green-200 px-[6.8rem] py-[10rem]">
@@ -23,7 +27,7 @@ import HeartFloating from "./HeartFloating.astro"
           <span
             class="font-cormorant text-[1.6rem] font-bold tracking-wider text-green-600"
           >
-            CÔ DÂU
+            {t("bridge")}
           </span>
         </h2>
         <div class="relative">
@@ -64,7 +68,7 @@ import HeartFloating from "./HeartFloating.astro"
           <span
             class="font-cormorant text-[1.6rem] font-bold tracking-wider text-green-600"
           >
-            CHỦ RỂ
+            {t("groom")}
           </span>
         </h2>
       </div>

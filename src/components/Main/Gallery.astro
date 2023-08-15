@@ -2,10 +2,15 @@
 import { Image } from "astro:assets"
 import type { ImageMetadata } from "astro"
 import { shuffleArray } from "~/utils"
+import { getLangFromUrl, useTranslations } from "~/i18n/utils"
+
 // import { range } from "~/utils"
 const galleries = await Astro.glob<{ default: ImageMetadata }>(
   "/src/assets/gallery/*.{png,jpg,jpeg}"
 )
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <section id="gallery" class="bg-white px-[5vw] py-[4vw]">
@@ -20,19 +25,19 @@ const galleries = await Astro.glob<{ default: ImageMetadata }>(
       data-script="filterAll"
       class="bg-green-400 px-4 py-2 text-white hover:bg-green-400 hover:text-white"
     >
-      Tất cả ảnh
+      {t("all")}
     </button>
     <button
       data-script="filterWesternStyle"
       class="px-4 py-2 hover:bg-green-400 hover:text-white"
     >
-      Phong cách phương tây
+      {t("western")}
     </button>
     <button
       data-script="filterJapanStyle"
       class="px-4 py-2 hover:bg-green-400 hover:text-white"
     >
-      Phong cách Nhật Bản
+      {t("japanese")}
     </button>
   </div>
   <ul

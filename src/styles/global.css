@@ -4,8 +4,16 @@
 
 @layer base {
   html {
-    @apply text-black font-lexend scroll-smooth;
+    @apply text-black scroll-smooth;
     @apply text-[0.69vw] pc-lg:text-[62.5%];
+
+    &, &[lang="vi"] {
+      @apply font-lexend;
+    }
+
+    &[lang="ja"] {
+      @apply font-ja;
+    }
   }
 }
 
