@@ -43,7 +43,7 @@ const envelopeBackSideImages = await Astro.glob<{ default: ImageMetadata }>(
             <button
               data-selector="view-back-side"
               class={clsx(
-                "mx-auto mt-[2rem] hidden w-[20rem] rounded-xl p-4 text-[1.6rem] group-[&.swiper-slide-active]:block",
+                "relative z-10 mx-auto mt-[2rem] hidden w-[20rem] rounded-xl p-4 text-[1.6rem] group-[&.swiper-slide-active]:block",
                 index === 0 && "bg-white shadow-md",
                 index === 1 && "bg-blue text-blue-dark"
               )}
