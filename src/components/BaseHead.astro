@@ -85,3 +85,19 @@ const { title, description, image = "/ogp.png" } = Astro.props
     replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
   })
 </script>
+
+<script>
+  const lazyBg = document.querySelectorAll(".lazy-bg")
+  const lazyBgObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && entry.target instanceof HTMLElement) {
+        entry.target.style.backgroundImage = `url(${entry.target.dataset.src})`
+        lazyBgObserver.unobserve(entry.target)
+      }
+    })
+  })
+
+  lazyBg.forEach((bg) => {
+    lazyBgObserver.observe(bg)
+  })
+</script>

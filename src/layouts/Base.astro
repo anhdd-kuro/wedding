@@ -1,0 +1,18 @@
+---
+import BaseHead from "@/components/BaseHead.astro"
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <slot />
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"
+    ></script>
+  </body>
+</html>

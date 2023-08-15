@@ -8,8 +8,15 @@ import logoImg from "~/assets/logo.png"
 import ducAnhThuyAnImg from "~/assets/duc_anh_thuy_an.png"
 import envelope from "~/assets/envelope.png"
 import { Icon } from "astro-icon"
+import Modal from "./Modal.astro"
+import Envelope from "./Envelope.astro"
 ---
 
+<Modal modalTriggerSelector="envelope">
+  <div class="w-[80vw] max-w-[500px] p-[2rem]">
+    <Envelope />
+  </div>
+</Modal>
 <header
   class="sticky left-0 top-0 flex min-h-screen flex-col px-[3.2rem] py-[5rem]"
 >
@@ -60,7 +67,7 @@ import { Icon } from "astro-icon"
     </button>
   </div>
   <div class="flex-center my-[4rem]">
-    <div class="glowing-effect ringing-effect">
+    <div class="glowing-effect ringing-effect" data-selector="envelope">
       <Image src={envelope} height={82} alt="Envelope" />
     </div>
   </div>

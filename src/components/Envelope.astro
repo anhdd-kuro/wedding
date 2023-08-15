@@ -1,0 +1,123 @@
+---
+import type { ImageMetadata } from "astro"
+import { Image } from "astro:assets"
+import clsx from "clsx"
+
+const envelopeImages = await Astro.glob<{ default: ImageMetadata }>(
+  "/src/assets/thiep-{1,2,3}.png"
+)
+const envelopeBackSideImages = await Astro.glob<{ default: ImageMetadata }>(
+  "/src/assets/thiep-{1,2,3}-*.png"
+)
+---
+
+<swiper-container
+  class="envelope-slider"
+  effect="cards"
+  grab-cursor="true"
+  cards-effect-slide-shadows="false"
+  cards-effect-per-slide-offset="16"
+  cards-effect-per-slide-rotate="0"
+>
+  {
+    envelopeImages.map((image, index) => (
+      <swiper-slide class="group">
+        <div class="h-full">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <Image
+                src={image.default}
+                alt="Envelope"
+                class="flip-card-front"
+              />
+              {envelopeBackSideImages[index] && (
+                <Image
+                  src={envelopeBackSideImages[index]?.default}
+                  alt="Envelope"
+                  class="flip-card-back"
+                />
+              )}
+            </div>
+          </div>
+          {index !== 2 && (
+            <button
+              data-selector="view-back-side"
+              class={clsx(
+                "mx-auto mt-[2rem] hidden w-[20rem] rounded-xl p-4 text-[1.6rem] group-[&.swiper-slide-active]:block",
+                index === 0 && "bg-white shadow-md",
+                index === 1 && "bg-blue text-blue-dark"
+              )}
+            >
+              Xem mặt sau
+            </button>
+          )}
+        </div>
+      </swiper-slide>
+    ))
+  }
+</swiper-container>
+
+<style>
+  .envelope-slider .swiper-slide {
+    height: auto;
+    align-self: stretch;
+  }
+
+  .flip-card {
+    perspective: 1000px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  /* .flip-card:hover .flip-card-inner {
+    transform: rotateY(-180deg);
+  } */
+
+  .flip-card-front,
+  .flip-card-back {
+    backface-visibility: hidden;
+  }
+
+  .flip-card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+  }
+  [data-selector="view-back-side"] {
+    opacity: 1;
+    pointer-events: all;
+  }
+</style>
+
+<script>
+  const viewBackSideTrigger = document.querySelectorAll(
+    "[data-selector=view-back-side]"
+  )
+
+  viewBackSideTrigger?.forEach((elm) =>
+    elm.addEventListener("mouseover", () => {
+      const flipCardInner =
+        elm?.parentElement?.querySelector(".flip-card-inner")
+
+      if (flipCardInner instanceof HTMLElement) {
+        flipCardInner.style.transform = "rotateY(-180deg)"
+      }
+    })
+  )
+
+  viewBackSideTrigger?.forEach((elm) =>
+    elm.addEventListener("mouseout", () => {
+      const flipCardInner =
+        elm?.parentElement?.querySelector(".flip-card-inner")
+
+      if (flipCardInner instanceof HTMLElement) {
+        flipCardInner.style.transform = "rotateY(0deg)"
+      }
+    })
+  )
+</script>

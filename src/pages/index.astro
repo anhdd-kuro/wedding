@@ -1,42 +1,19 @@
 ---
-import BaseHead from "../components/BaseHead.astro"
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
+import BaseLayout from "~/layouts/Base.astro"
 import Main from "@/components/Main/index.astro"
+import Footer from "~/components/Footer.astro"
+import Header from "~/components/Header.astro"
+import { SITE_TITLE } from "~/consts"
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <div
-      class="grid h-screen grid-cols-[minmax(350px,20%)_auto_auto_auto_auto]"
-    >
-      <div class="col-span-1 bg-green-100">
-        <Header title={SITE_TITLE} />
-      </div>
-      <div class="col-span-4 min-w-full">
-        <Main />
-        <Footer class="" />
-      </div>
+<BaseLayout>
+  <div class="grid h-screen grid-cols-[minmax(350px,20%)_auto_auto_auto_auto]">
+    <div class="col-span-1 bg-green-100">
+      <Header title={SITE_TITLE} />
     </div>
-    <script>
-      const lazyBg = document.querySelectorAll(".lazy-bg")
-      const lazyBgObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.style.backgroundImage = `url(${entry.target.dataset.src})`
-            lazyBgObserver.unobserve(entry.target)
-          }
-        })
-      })
-
-      lazyBg.forEach((bg) => {
-        lazyBgObserver.observe(bg)
-      })
-    </script>
-  </body>
-</html>
+    <div class="col-span-4 min-w-full">
+      <Main />
+      <Footer class="" />
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,89 @@
+---
+interface Props {
+  modalTriggerSelector: string
+  className?: string
+  name?: string
+}
+
+const { modalTriggerSelector, className, name = "anonymous" } = Astro.props
+---
+
+<astro-modal data-trigger-selector={modalTriggerSelector} data-name={name}>
+  <div
+    data-selector={name}
+    class="transition-opaci3y invisible fixed left-0 top-0 z-[999] h-screen w-screen bg-black/40 opacity-0 duration-300"
+  >
+    <div
+      class={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ${className}`}
+    >
+      <slot name="close">
+        <button
+          class="absolute right-0 top-0 block -translate-y-1/2 translate-x-1/2 text-white"
+          data-selector={`${name}-modal-close`}
+          @click="closeModal"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 32 32"
+            width="36"
+            height="36"
+            class="fill-white hover:fill-green-400"
+          >
+            <path
+              d="M17.414 16l6.293-6.293a1 1 0 10-1.414-1.414L16 14.586 9.707 8.293a1 1 0 00-1.414 1.414L14.586 16l-6.293 6.293a1 1 0 101.414 1.414L16 17.414l6.293 6.293a1 1 0 001.414-1.414L17.414 16z"
+            ></path>
+          </svg>
+        </button>
+      </slot>
+
+      <slot>Hello</slot>
+    </div>
+  </div>
+</astro-modal>
+
+<script>
+  const invisibleClasses = ["opacity-0", "invisible"]
+
+  class Modal extends HTMLElement {
+    constructor() {
+      super()
+      const modalTriggerSelector = this.dataset.triggerSelector
+      const name = this.dataset.name
+
+      const modalTriggers = document.querySelectorAll(
+        `[data-selector=${modalTriggerSelector}]`
+      )
+
+      const modal = document.querySelector(`[data-selector=${name}]`)
+      const modalClose = document.querySelector(
+        `[data-selector=${name}-modal-close]`
+      )
+
+      const openModal = () => {
+        console.log("open")
+        modal?.classList.remove(...invisibleClasses)
+      }
+
+      const closeModal = () => {
+        console.log("close")
+        modal?.classList.add(...invisibleClasses)
+      }
+
+      modalTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", openModal)
+      })
+
+      modalClose?.addEventListener("click", closeModal)
+
+      // Close when clicking outside
+
+      window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          closeModal()
+        }
+      })
+    }
+  }
+
+  customElements.define("astro-modal", Modal)
+</script>
