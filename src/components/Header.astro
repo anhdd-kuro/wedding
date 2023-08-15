@@ -9,8 +9,6 @@ import logoImg from "~/assets/logo.png"
 import ducAnhThuyAnImg from "~/assets/duc_anh_thuy_an.png"
 import envelope from "~/assets/envelope.png"
 import { Icon } from "astro-icon"
-import Modal from "./Modal.astro"
-import Envelope from "./Envelope.astro"
 import clsx from "clsx"
 
 interface Props {
@@ -23,12 +21,6 @@ const { dataSelector = "header" } = Astro.props
 const lang = getLangFromUrl(Astro.url)
 ---
 
-<Modal modalTriggerSelector="envelope">
-  <div class="w-[80vw] max-w-[500px]">
-    <p class="mb-3 text-center text-[1.6rem] text-white">Kéo để xem tiếp</p>
-    <Envelope />
-  </div>
-</Modal>
 <header
   class="relative left-0 top-0 z-10 flex h-screen flex-col overflow-y-auto px-[3.2rem] py-[4rem] tablet:sticky"
   data-selector={dataSelector}

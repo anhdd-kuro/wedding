@@ -4,6 +4,8 @@ import Main from "@/components/Main/index.astro"
 import Footer from "~/components/Footer.astro"
 import Header from "~/components/Header.astro"
 import { SITE_TITLE } from "~/consts"
+import Modal from "@/components/Modal.astro"
+import Envelope from "@/components/Envelope.astro"
 
 export async function getStaticPaths() {
   return [
@@ -27,6 +29,13 @@ export async function getStaticPaths() {
 ---
 
 <BaseLayout>
+  <Modal modalTriggerSelector="envelope" slot="teleport">
+    <div class="w-[80vw] max-w-[500px]">
+      <p class="mb-3 text-center text-[1.6rem] text-white">Kéo để xem tiếp</p>
+      <Envelope />
+    </div>
+  </Modal>
+
   <div class="grid h-screen grid-cols-[minmax(350px,20%)_auto_auto_auto_auto]">
     <button
       class="flex-center fixed left-8 top-8 z-[998] rounded-xl bg-white p-3 shadow-md tablet:hidden"

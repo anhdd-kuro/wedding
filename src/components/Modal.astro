@@ -14,6 +14,10 @@ const { modalTriggerSelector, className, name = "anonymous" } = Astro.props
   <div
     data-selector={name}
     class="transition-opaci3y invisible fixed left-0 top-0 z-[999] h-screen w-full overflow-auto bg-black/60 opacity-0 duration-300"
+    style={{
+      transform: "translateZ(0)",
+      "-webkit-transform": "translateZ(0)",
+    }}
   >
     <div
       class={clsx(
