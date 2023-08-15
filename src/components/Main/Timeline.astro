@@ -1,12 +1,19 @@
 ---
 import { Image } from "astro:assets"
 import beOurGuestImg from "@/assets/be-our-guest.png"
-import timelineImg1 from "@/assets/timeline-1.png"
-import timelineImg2 from "@/assets/timeline-2.png"
-import timelineImg3 from "@/assets/timeline-3.png"
-import timelineImg4 from "@/assets/timeline-4.png"
-import timelineImg5 from "@/assets/timeline-5.png"
 import HeartFloating from "./HeartFloating.astro"
+import { getLangFromUrl, useTranslations } from "~/i18n/utils"
+import type { ImageMetadata } from "astro"
+
+const timeline = await Astro.glob<{ default: ImageMetadata }>(
+  "/src/assets/timeline-{1,2,3,4,5}.png"
+)
+const timelineJa = await Astro.glob<{ default: ImageMetadata }>(
+  "/src/assets/timeline-{1,2,3,4,5}-ja.png"
+)
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <div class="overflow-hidden">
@@ -27,34 +34,37 @@ import HeartFloating from "./HeartFloating.astro"
     <ol class="mt-[4rem] flex max-w-[1440px]">
       <li class="group relative flex-1 cursor-context-menu">
         <Image
-          src={timelineImg1}
+          src={lang === "vi" ? timeline[0]?.default : timelineJa[0]?.default}
           alt="13:30 Lễ đón dâu được tổ chức tại tư gia nhà gái"
         />
         <HeartFloating count={6} delayMultiply={0.2} />
       </li>
       <li class="group relative flex-1 cursor-context-menu">
         <Image
-          src={timelineImg2}
+          src={lang === "vi" ? timeline[1]?.default : timelineJa[1]?.default}
           alt="15:00 Lễ thành hôn được tổ chức tại tư gia nhà trai"
         />
         <HeartFloating count={6} delayMultiply={0.2} />
       </li>
       <li class="group relative flex-1 cursor-context-menu">
         <Image
-          src={timelineImg3}
+          src={lang === "vi" ? timeline[2]?.default : timelineJa[2]?.default}
           alt="17:30 Checkin và đón khách tại Daehoo hotel"
         />
         <HeartFloating count={6} delayMultiply={0.2} />
       </li>
       <li class="group relative flex-1 cursor-context-menu">
         <Image
-          src={timelineImg4}
+          src={lang === "vi" ? timeline[3]?.default : timelineJa[3]?.default}
           alt="18:00 Tiệc cưới bắt đầu, rút thăm may mắn"
         />
         <HeartFloating count={6} delayMultiply={0.2} />
       </li>
       <li class="group relative flex-1 cursor-context-menu">
-        <Image src={timelineImg5} alt="19:30 Tung hoa, kết thúc lễ cưới" />
+        <Image
+          src={lang === "vi" ? timeline[4]?.default : timelineJa[4]?.default}
+          alt="19:30 Tung hoa, kết thúc lễ cưới"
+        />
         <HeartFloating count={6} delayMultiply={0.2} />
       </li>
     </ol>
