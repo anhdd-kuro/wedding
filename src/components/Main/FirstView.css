@@ -1,13 +1,19 @@
 #main-slide {
   .swiper-pagination-bullet {
-    width: 26px;
-    height: 26px;
+    width: 2rem;
+    height: 2rem;
     -webkit-mask-image: url(/heart.svg);
     mask-image: url(/heart.svg);
     mask-size: cover;
 
     &-active {
       @apply bg-black-light;
+    }
+
+
+    @screen pc {
+      width: 26px;
+      height: 26px;
     }
   }
 
