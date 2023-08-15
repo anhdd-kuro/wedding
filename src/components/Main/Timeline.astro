@@ -18,9 +18,9 @@ const lang = getLangFromUrl(Astro.url)
 
 <div class="overflow-hidden">
   <picture>
-    <source media="(min-width: 768px)" srcset={beOurGuestImg.src} />
+    <source media="(max-width: 1024px)" srcset={beOurGuestImgSP.src} />
     <Image
-      src={beOurGuestImgSP}
+      src={beOurGuestImg}
       alt="Be Our Guest !"
       class="relative left-1/2 mx-auto h-full w-full -translate-x-1/2 object-cover pc:min-w-[1440px]"
     />
