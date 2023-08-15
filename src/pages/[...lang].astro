@@ -28,8 +28,26 @@ export async function getStaticPaths() {
 
 <BaseLayout>
   <div class="grid h-screen grid-cols-[minmax(350px,20%)_auto_auto_auto_auto]">
+    <button
+      class="flex-center fixed left-8 top-8 z-[998] rounded-xl bg-white p-3 shadow-md pc:hidden"
+      data-selector="toggle-sidebar-trigger"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        class="h-[2rem] w-[2rem] stroke-green-600"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
     <div
-      class="fixed left-0 top-0 hidden bg-green-100 pc:relative pc:col-span-1 pc:block"
+      class="invisible fixed left-0 top-0 z-20 -translate-x-full bg-green-100 transition-all duration-300 pc:visible pc:relative pc:col-span-1 pc:block"
+      data-selector="sidebar-header"
     >
       <Header title={SITE_TITLE} />
     </div>
@@ -39,3 +57,33 @@ export async function getStaticPaths() {
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  const toggleSidebarTrigger = document.querySelector(
+    "[data-selector=toggle-sidebar-trigger]"
+  )
+  const sidebarHeader = document.querySelector("[data-selector=sidebar-header]")
+
+  toggleSidebarTrigger?.addEventListener("click", () => {
+    sidebarHeader?.classList.toggle("-translate-x-full")
+    sidebarHeader?.classList.toggle("invisible")
+    sidebarHeader?.classList.toggle("active")
+  })
+</script>
+
+<style>
+  [data-selector="sidebar-header"] {
+    transform-style: preserve-3d;
+  }
+
+  [data-selector="sidebar-header"].active::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -10;
+    transform: translateZ(-1px);
+  }
+</style>

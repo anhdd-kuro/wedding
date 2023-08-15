@@ -13,6 +13,13 @@ import Modal from "./Modal.astro"
 import Envelope from "./Envelope.astro"
 import clsx from "clsx"
 
+interface Props {
+  title?: string
+  dataSelector?: string
+}
+
+const { dataSelector = "header" } = Astro.props
+
 const lang = getLangFromUrl(Astro.url)
 ---
 
@@ -23,16 +30,17 @@ const lang = getLangFromUrl(Astro.url)
   </div>
 </Modal>
 <header
-  class="sticky left-0 top-0 flex h-screen flex-col overflow-y-auto px-[3.2rem] py-[4rem]"
+  class="relative left-0 top-0 z-10 flex h-screen flex-col overflow-y-auto px-[3.2rem] py-[4rem] pc:sticky"
+  data-selector={dataSelector}
 >
   <div class="flex-center">
-    <Image src={logoImg} alt="A/A" width={60} height={60} />
+    <Image src={logoImg} alt="A/A" class="h-[6rem] w-auto" />
   </div>
   <h1 class="flex-center mt-[1.5rem] flex-col">
     <Image
       src={ducAnhThuyAnImg}
-      height={26}
       alt="ĐỨC ANH & THÚY AN - 29.10.2023 - Daewoo Hotel Ha Noi"
+      class="h-[2.6rem]"
     />
   </h1>
   <strong
@@ -42,7 +50,7 @@ const lang = getLangFromUrl(Astro.url)
   </strong>
   <nav id="sidebar-nav" class="mt-[4rem]">
     <ul
-      class="flex-center flex-col gap-[2.4rem] text-[1.6rem] font-light leading-none tracking-wider"
+      class="flex-center flex-col gap-[2.4rem] text-[1.4rem] font-light leading-none tracking-wider pc:text-[1.6rem]"
     >
       <li class="pb-1">
         <a class="border-b-after" href="#main-slide">Top</a>
@@ -71,9 +79,9 @@ const lang = getLangFromUrl(Astro.url)
       <span class={clsx("border-b-after", lang === "ja" && "active")}>JA</span>
     </a>
   </div>
-  <div class="flex-center my-[4rem]">
+  <div class="flex-center my-[2rem] pc:my-[4rem]">
     <div class="glowing-effect ringing-effect" data-selector="envelope">
-      <Image src={envelope} height={82} alt="Envelope" />
+      <Image src={envelope} alt="Envelope" class="h-[8rem]" />
     </div>
   </div>
   <p class="flex-center font-cormorant text-[1.6rem] tracking-wider text-green">
@@ -95,8 +103,7 @@ const lang = getLangFromUrl(Astro.url)
     >
       Daewoo Hotel Ha Noi <Icon
         name="map-pin"
-        class="animate-bounce stroke-green"
-        height="18"
+        class="h-[1.8rem] animate-bounce stroke-green"
       />
     </a>
   </p>
