@@ -11,6 +11,7 @@ import envelope from "~/assets/envelope.png"
 import { Icon } from "astro-icon"
 import Modal from "./Modal.astro"
 import Envelope from "./Envelope.astro"
+import clsx from "clsx"
 
 const lang = getLangFromUrl(Astro.url)
 ---
@@ -64,10 +65,10 @@ const lang = getLangFromUrl(Astro.url)
     class="flex-center mb-[4rem] mt-[2.4rem] divide-x text-[1.6rem] font-light leading-none tracking-wider"
   >
     <a href="/" class="px-[2rem]">
-      <span class="border-b-after">VI</span>
+      <span class={clsx("border-b-after", lang === "vi" && "active")}>VI</span>
     </a>
     <a href="/ja/" class="px-[2rem]">
-      <span class="border-b-after">JA</span>
+      <span class={clsx("border-b-after", lang === "ja" && "active")}>JA</span>
     </a>
   </div>
   <div class="flex-center my-[4rem]">
