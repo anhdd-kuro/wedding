@@ -22,31 +22,29 @@ const lang = getLangFromUrl(Astro.url)
     <Image
       src={beOurGuestImgSP}
       alt="Be Our Guest !"
-      class="relative left-1/2 mx-auto -translate-x-1/2 tablet:min-w-[1440px]"
+      class="relative left-1/2 mx-auto h-full w-full -translate-x-1/2 object-cover pc:min-w-[1440px]"
     />
   </picture>
 </div>
 <section
   id="timeline"
-  class="bg-green-200 px-[2rem] py-[3rem] tablet:px-[5vw] tablet:py-[4vw]"
+  class="bg-green-200 px-[2rem] py-[3rem] pc:px-[5vw] pc:py-[4vw]"
 >
   <div class="container mx-auto">
-    <h3
-      class="text-[1.6rem] tracking-[1.4rem] text-green-400 tablet:text-[2.2rem]"
-    >
+    <h3 class="text-[1.6rem] tracking-[1.4rem] text-green-400 pc:text-[2.2rem]">
       WEDDING
     </h3>
     <h2
-      class="font-cormorant text-[3.2rem] leading-[1.4em] tracking-widest text-black-light tablet:text-[4.8rem]"
+      class="font-cormorant text-[3.2rem] leading-[1.4em] tracking-widest text-black-light pc:text-[4.8rem]"
     >
       TIMELINE
     </h2>
     <div
-      class="mt-[2rem] snap-x overflow-x-auto overflow-y-hidden tablet:mt-[4rem] tablet:max-w-[1440px]"
+      class="mt-[2rem] snap-x overflow-x-auto overflow-y-hidden pc:mt-[4rem] pc:max-w-[1440px]"
     >
-      <ol class="flex w-[80rem] tablet:w-auto">
+      <ol class="flex w-[80rem] pc:w-auto">
         <li
-          class="group relative w-1/2 cursor-context-menu snap-start tablet:flex-1"
+          class="group relative w-1/2 cursor-context-menu snap-start pc:flex-1"
         >
           <Image
             src={lang === "vi" ? timeline[0]?.default : timelineJa[0]?.default}
@@ -55,7 +53,7 @@ const lang = getLangFromUrl(Astro.url)
           <HeartFloating count={6} delayMultiply={0.2} />
         </li>
         <li
-          class="group relative w-1/2 cursor-context-menu snap-start tablet:flex-1"
+          class="group relative w-1/2 cursor-context-menu snap-start pc:flex-1"
         >
           <Image
             src={lang === "vi" ? timeline[1]?.default : timelineJa[1]?.default}
@@ -64,7 +62,7 @@ const lang = getLangFromUrl(Astro.url)
           <HeartFloating count={6} delayMultiply={0.2} />
         </li>
         <li
-          class="group relative w-1/2 cursor-context-menu snap-start tablet:flex-1"
+          class="group relative w-1/2 cursor-context-menu snap-start pc:flex-1"
         >
           <Image
             src={lang === "vi" ? timeline[2]?.default : timelineJa[2]?.default}
@@ -73,7 +71,7 @@ const lang = getLangFromUrl(Astro.url)
           <HeartFloating count={6} delayMultiply={0.2} />
         </li>
         <li
-          class="group relative w-1/2 cursor-context-menu snap-start tablet:flex-1"
+          class="group relative w-1/2 cursor-context-menu snap-start pc:flex-1"
         >
           <Image
             src={lang === "vi" ? timeline[3]?.default : timelineJa[3]?.default}
@@ -82,7 +80,7 @@ const lang = getLangFromUrl(Astro.url)
           <HeartFloating count={6} delayMultiply={0.2} />
         </li>
         <li
-          class="group relative w-1/2 cursor-context-menu snap-start tablet:flex-1"
+          class="group relative w-1/2 cursor-context-menu snap-start pc:flex-1"
         >
           <Image
             src={lang === "vi" ? timeline[4]?.default : timelineJa[4]?.default}

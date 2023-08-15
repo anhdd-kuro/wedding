@@ -24,7 +24,7 @@ export const FirstView = () => {
       effect="fade"
       speed={2000}
       lazyPreloadPrevNext={1}
-      className="h-[50vh] min-h-[500px] tablet:h-screen tablet:min-h-[800px]"
+      className="h-[50vh] min-h-[500px] pc:h-screen pc:min-h-[800px]"
     >
       <SwiperSlide>
         <div

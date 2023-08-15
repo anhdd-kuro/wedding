@@ -8,25 +8,20 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<footer
-  id="footer"
-  class="bg-green-200 p-[3rem] tablet:px-[5vw] tablet:py-[4vw]"
->
+<footer id="footer" class="bg-green-200 p-[3rem] pc:px-[5vw] pc:py-[4vw]">
   <div
-    class="flex-center container mx-auto flex-col gap-[3rem] text-center tablet:flex-row tablet:gap-[6rem] tablet:text-left"
+    class="flex-center container mx-auto flex-col gap-[3rem] text-center pc:flex-row pc:gap-[6rem] pc:text-left"
   >
     <div class="overflow-hidden">
       <Image src={artImg} alt="Tranh vẽ cô dâu chú rể" height={260} />
     </div>
     <div>
-      <h2
-        class="text-semibold text-black-drak text-[1.4rem] tablet:text-[1.8rem]"
-      >
+      <h2 class="text-semibold text-black-drak text-[1.4rem] pc:text-[1.8rem]">
         {t("qr")}
       </h2>
-      <hr class="mx-auto mt-[1rem] w-[10rem] border-[1px] tablet:mx-0" />
+      <hr class="mx-auto mt-[1rem] w-[10rem] border-[1px] pc:mx-0" />
       <ul
-        class="mt-[5rem] flex w-full flex-col gap-[5rem] text-left tracking-wider tablet:flex-row"
+        class="mt-[5rem] flex w-full flex-col gap-[5rem] text-left tracking-wider pc:flex-row"
       >
         <li class="flex gap-[2rem]">
           <Icon

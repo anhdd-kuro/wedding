@@ -37,7 +37,7 @@ module.exports = {
 		},
 		screens: {
 			"tablet": "769px",
-			"pc": "1024px",
+			"pc": "1025px",
 			"pc-lg": "1440px"
 		},
 		extend: {},

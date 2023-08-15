@@ -16,15 +16,13 @@ const t = useTranslations(lang)
 
 <section
   id="gallery"
-  class="bg-green-200 px-[2rem] py-[3rem] tablet:px-[5vw] tablet:py-[4vw]"
+  class="bg-green-200 px-[2rem] py-[3rem] pc:px-[5vw] pc:py-[4vw]"
 >
-  <h3
-    class="text-[1.8rem] tracking-[1.4rem] text-green-400 tablet:text-[2.2rem]"
-  >
+  <h3 class="text-[1.8rem] tracking-[1.4rem] text-green-400 pc:text-[2.2rem]">
     GALLERY
   </h3>
   <h2
-    class="font-cormorant text-[3.2rem] leading-[1.4em] tracking-widest text-black-light tablet:text-[4.8rem]"
+    class="font-cormorant text-[3.2rem] leading-[1.4em] tracking-widest text-black-light pc:text-[4.8rem]"
   >
     OUR MEMORIES
   </h2>
@@ -50,11 +48,11 @@ const t = useTranslations(lang)
   </div>
   <ul
     id="album"
-    class="mt-[2rem] flex h-[49rem] snap-x flex-col flex-wrap gap-[1.6rem] overflow-auto scroll-smooth tablet:mt-[4rem]"
+    class="mt-[2rem] flex h-[49rem] snap-x flex-col flex-wrap gap-[1.6rem] overflow-auto scroll-smooth pc:mt-[4rem]"
   >
     {
       shuffleArray(galleries).map((gallery, index) => (
-        <li class="h-[15rem] w-1/2 snap-start overflow-hidden bg-green-600/30 transition-all duration-200 tablet:h-[22.5rem] tablet:w-[32rem]">
+        <li class="h-[15rem] w-[22.5rem] snap-start overflow-hidden bg-green-600/30 transition-all duration-200 pc:h-[22.5rem] pc:w-[32rem] pc:max-w-none">
           <Image
             src={gallery.default}
             alt={`ảnh cưới cô dâu chú rể ${index}`}
@@ -65,7 +63,7 @@ const t = useTranslations(lang)
     }
   </ul>
 </section>
-<div class="overflow-hidden tablet:h-[36vw] tablet:min-h-[50rem]">
+<div class="overflow-hidden pc:h-[36vw] pc:min-h-[50rem]">
   <Image
     src={subImage}
     alt="Ảnh cô dâu chủ rể"
