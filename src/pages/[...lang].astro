@@ -73,6 +73,8 @@ export async function getStaticPaths() {
   )
   const sidebarHeader = document.querySelector("[data-selector=sidebar-header]")
 
+  const envelopeBtn = document.querySelector("[data-selector=envelope]")
+
   toggleSidebarTrigger?.addEventListener("click", () => {
     sidebarHeader?.classList.toggle("-translate-x-full")
     sidebarHeader?.classList.toggle("invisible")
@@ -80,11 +82,13 @@ export async function getStaticPaths() {
   })
 
   // Close sidebar when click outside
-  document.addEventListener("click", (e) => {
+  window.addEventListener("click", (e) => {
+    console.log(e.target)
     if (
-      !sidebarHeader?.classList.contains("invisible") &&
-      !sidebarHeader?.contains(e.target as Node) &&
-      !toggleSidebarTrigger?.contains(e.target as Node)
+      (!sidebarHeader?.classList.contains("invisible") &&
+        !sidebarHeader?.contains(e.target as Node) &&
+        !toggleSidebarTrigger?.contains(e.target as Node)) ||
+      envelopeBtn?.contains(e.target as Node)
     ) {
       sidebarHeader?.classList.add("-translate-x-full")
       sidebarHeader?.classList.add("invisible")

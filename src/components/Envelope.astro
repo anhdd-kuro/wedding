@@ -116,8 +116,23 @@ const envelopeBackSideImages = await Astro.glob<{ default: ImageMetadata }>(
         elm?.parentElement?.querySelector(".flip-card-inner")
 
       if (flipCardInner instanceof HTMLElement) {
-        flipCardInner.style.transform = "rotateY(0deg)"
+        flipCardInner.style.transform = ""
       }
     })
   )
+
+  // toggle when click
+  if (window.innerWidth <= 1024)
+    viewBackSideTrigger?.forEach((elm) =>
+      elm.addEventListener("click", () => {
+        const flipCardInner =
+          elm?.parentElement?.querySelector(".flip-card-inner")
+
+        if (flipCardInner instanceof HTMLElement) {
+          flipCardInner.style.transform = flipCardInner.style.transform
+            ? ""
+            : "rotateY(-180deg)"
+        }
+      })
+    )
 </script>
