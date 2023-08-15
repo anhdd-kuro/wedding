@@ -21,28 +21,28 @@ const renderer =
     } else {
       // Render a countdown
       return (
-        <strong className="flex-center mt-4 gap-x-[2rem] text-[3.2rem] font-medium tracking-wider text-black-light pc:text-[4rem]">
+        <strong className="flex-center mt-4 gap-x-[2rem] text-[3.2rem] font-medium tracking-wider text-black-light tablet:text-[4rem]">
           <span className="flex-center flex-col">
             <span>{days}</span>
-            <span className="text-[1.2rem] text-green pc:text-[12px]">
+            <span className="text-[1.2rem] text-green tablet:text-[12px]">
               {t("days")}
             </span>
           </span>
           <span className="flex-center flex-col">
             <span>{hours}</span>
-            <span className="text-[1.2rem] text-green pc:text-[12px]">
+            <span className="text-[1.2rem] text-green tablet:text-[12px]">
               {t("hours")}
             </span>
           </span>
           <span className="flex-center flex-col">
             <span>{minutes}</span>
-            <span className="text-[1.2rem] text-green pc:text-[12px]">
+            <span className="text-[1.2rem] text-green tablet:text-[12px]">
               {t("minutes")}
             </span>
           </span>
           <span className="flex-center flex-col">
             <span>{seconds}</span>
-            <span className="text-[1.2rem] text-green pc:text-[12px]">
+            <span className="text-[1.2rem] text-green tablet:text-[12px]">
               {t("seconds")}
             </span>
           </span>

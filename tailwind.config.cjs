@@ -36,7 +36,7 @@ module.exports = {
 			ja: ["Lexend", 'Zen Kaku Gothic New', "sans-serif"]
 		},
 		screens: {
-			"sm": "768px",
+			"tablet": "769px",
 			"pc": "1024px",
 			"pc-lg": "1440px"
 		},

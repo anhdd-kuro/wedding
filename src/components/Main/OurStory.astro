@@ -8,9 +8,9 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<section id="our-story" class="bg-white pc:px-[6rem] pc:py-[8rem]">
-  <div class="mx-auto max-w-[1260px] gap-[3.5rem] pc:flex">
-    <div class="w-full max-w-[48rem] pc:w-1/2">
+<section id="our-story" class="bg-white tablet:px-[6rem] tablet:py-[8rem]">
+  <div class="mx-auto max-w-[1260px] gap-[3.5rem] tablet:flex">
+    <div class="w-full max-w-[48rem] tablet:w-1/2">
       <Image src={ourStoryImg} alt="Ảnh our story" class="w-full" />
     </div>
     <div
@@ -19,19 +19,19 @@ const t = useTranslations(lang)
         lang !== "ja" ? "text-[1.4rem]" : "text-[1.6rem]"
       )}
     >
-      <div class="mt-[2rem] text-center pc:mt-0 pc:text-left">
+      <div class="mt-[2rem] text-center tablet:mt-0 tablet:text-left">
         <h3
-          class="text-[1.6rem] tracking-[1.4rem] text-green-400 pc:text-[2.2rem]"
+          class="text-[1.6rem] tracking-[1.4rem] text-green-400 tablet:text-[2.2rem]"
         >
           OUR LOVE
         </h3>
         <h2
-          class="font-cormorant text-[3.2rem] leading-[1.4em] text-black-light pc:text-[4.8rem]"
+          class="font-cormorant text-[3.2rem] leading-[1.4em] text-black-light tablet:text-[4.8rem]"
         >
           OUR STORY
         </h2>
       </div>
-      <div class="mt-4 px-[2rem] pb-[5rem] pc:mt-2 pc:p-0">
+      <div class="mt-4 px-[2rem] pb-[5rem] tablet:mt-2 tablet:p-0">
         <p class="">
           • 2014 <br />
           {t("story-1")}, <br />

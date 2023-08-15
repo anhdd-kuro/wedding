@@ -30,7 +30,7 @@ const lang = getLangFromUrl(Astro.url)
   </div>
 </Modal>
 <header
-  class="relative left-0 top-0 z-10 flex h-screen flex-col overflow-y-auto px-[3.2rem] py-[4rem] pc:sticky"
+  class="relative left-0 top-0 z-10 flex h-screen flex-col overflow-y-auto px-[3.2rem] py-[4rem] tablet:sticky"
   data-selector={dataSelector}
 >
   <div class="flex-center">
@@ -50,7 +50,7 @@ const lang = getLangFromUrl(Astro.url)
   </strong>
   <nav id="sidebar-nav" class="mt-[4rem]">
     <ul
-      class="flex-center flex-col gap-[2.4rem] text-[1.4rem] font-light leading-none tracking-wider pc:text-[1.6rem]"
+      class="flex-center flex-col gap-[2.4rem] text-[1.4rem] font-light leading-none tracking-wider tablet:text-[1.6rem]"
     >
       <li class="pb-1">
         <a class="border-b-after" href="#main-slide">Top</a>
@@ -79,7 +79,7 @@ const lang = getLangFromUrl(Astro.url)
       <span class={clsx("border-b-after", lang === "ja" && "active")}>JA</span>
     </a>
   </div>
-  <div class="flex-center my-[2rem] pc:my-[4rem]">
+  <div class="flex-center my-[2rem] tablet:my-[4rem]">
     <div class="glowing-effect ringing-effect" data-selector="envelope">
       <Image src={envelope} alt="Envelope" class="h-[8rem] w-auto" />
     </div>
