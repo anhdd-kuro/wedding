@@ -52,7 +52,7 @@ const t = useTranslations(lang)
   >
     {
       shuffleArray(galleries).map((gallery, index) => (
-        <li class="h-[15rem] w-[22.5rem] snap-start overflow-hidden bg-green-600/30 transition-all duration-200 pc:h-[22.5rem] pc:w-[32rem] pc:max-w-none">
+        <li class="h-[15rem] w-1/2 max-w-[22.5rem] snap-start overflow-hidden bg-green-600/30 transition-all duration-200 pc:h-[22.5rem] pc:w-[32rem] pc:max-w-none">
           <Image
             src={gallery.default}
             alt={`ảnh cưới cô dâu chú rể ${index}`}
