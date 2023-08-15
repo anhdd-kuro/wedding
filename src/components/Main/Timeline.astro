@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets"
 import beOurGuestImg from "@/assets/be-our-guest.png"
+import beOurGuestImgSP from "@/assets/be-our-guest-sp.png"
 import HeartFloating from "./HeartFloating.astro"
 import { getLangFromUrl } from "~/i18n/utils"
 import type { ImageMetadata } from "astro"
@@ -16,11 +17,14 @@ const lang = getLangFromUrl(Astro.url)
 ---
 
 <div class="overflow-hidden">
-  <Image
-    src={beOurGuestImg}
-    alt="Be Our Guest !"
-    class="relative left-1/2 mx-auto min-w-[1440px] -translate-x-1/2"
-  />
+  <picture>
+    <source media="(min-width: 769px)" srcset={beOurGuestImg.src} />
+    <Image
+      src={beOurGuestImgSP}
+      alt="Be Our Guest !"
+      class="relative left-1/2 mx-auto -translate-x-1/2 pc:min-w-[1440px]"
+    />
+  </picture>
 </div>
 <section id="timeline" class="bg-green-200 px-[5vw] py-[4vw]">
   <div class="container mx-auto">
