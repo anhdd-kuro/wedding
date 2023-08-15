@@ -1,4 +1,6 @@
 ---
+import clsx from "clsx"
+
 interface Props {
   modalTriggerSelector: string
   className?: string
@@ -11,10 +13,13 @@ const { modalTriggerSelector, className, name = "anonymous" } = Astro.props
 <astro-modal data-trigger-selector={modalTriggerSelector} data-name={name}>
   <div
     data-selector={name}
-    class="transition-opaci3y invisible fixed left-0 top-0 z-[999] h-screen w-screen bg-black/60 opacity-0 duration-300"
+    class="transition-opaci3y invisible fixed left-0 top-0 z-[999] h-screen w-full overflow-auto bg-black/60 opacity-0 duration-300"
   >
     <div
-      class={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ${className}`}
+      class={clsx(
+        `absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2`,
+        className
+      )}
     >
       <slot name="close">
         <button
@@ -35,8 +40,9 @@ const { modalTriggerSelector, className, name = "anonymous" } = Astro.props
           </svg>
         </button>
       </slot>
-
-      <slot>Hello</slot>
+      <div class="p-[1rem]">
+        <slot>Hello</slot>
+      </div>
     </div>
   </div>
 </astro-modal>
