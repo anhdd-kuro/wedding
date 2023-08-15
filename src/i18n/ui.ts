@@ -30,6 +30,8 @@ export const ui = {
       "Cuối cùng, sau 8 năm quen nhau, câu chuyện của chúng mình đã rẽ sang 1 chương hoàn toàn mới. Chúng mình sẽ tiếp tục cùng nhau cố gắng để xây dựng tổ ấm và hy vọng sẽ được ở cạnh nhau mỗi ngày.",
     qr: "QUÉT QR MỪNG HẠNH PHÚC CHO CÔ DÂU CHÚ RỂ!",
     covid: "Đại dịch Covid 19 🦠 bùng nổ",
+    swipe: "Kéo hoặc vuốt sang để xem tiếp",
+    backside: "Xem mặt sau",
   },
   ja: {
     days: "日",
@@ -55,5 +57,7 @@ export const ui = {
       "最後に、8年間の付き合いを経て、私たちの物語は全く新しい章に入りました。私たちは共に家庭を築く努力を続け、毎日一緒に過ごすことを願っています。",
     qr: "QRコードをスキャンして、花嫁と花婿の幸福を祝福しましょう！",
     covid: "Covid-19 大流行 🦠",
+    swipe: "スワイプして次を見る",
+    backside: "裏面を見る",
   },
 } as const

@@ -6,6 +6,7 @@ import Header from "~/components/Header.astro"
 import { SITE_TITLE } from "~/consts"
 import Modal from "@/components/Modal.astro"
 import Envelope from "@/components/Envelope.astro"
+import { getLangFromUrl, useTranslations } from "~/i18n/utils"
 
 export async function getStaticPaths() {
   return [
@@ -26,13 +27,16 @@ export async function getStaticPaths() {
     },
   ]
 }
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <BaseLayout>
   <Modal modalTriggerSelector="envelope" slot="teleport">
     <div class="w-[80vw] max-w-[500px]">
       <p class="mb-3 text-center text-[1.6rem] text-white">
-        Kéo hoặc vuốt sang để xem tiếp
+        {t("swipe")}
       </p>
       <Envelope />
     </div>
