@@ -46,22 +46,29 @@ const t = useTranslations(lang)
       {t("japanese")}
     </button>
   </div>
-  <ul
-    id="album"
-    class="scrollbar-always mt-[2rem] flex h-[50rem] snap-x flex-col flex-wrap gap-[1.6rem] overflow-auto scroll-smooth pc:mt-[4rem] pc:h-[49rem]"
+  <div
+    data-simplebar
+    class="mt-[2rem] snap-x overflow-auto scroll-smooth"
+    data-simplebar
+    data-simplebar-auto-hide="false"
   >
-    {
-      shuffleArray(galleries).map((gallery, index) => (
-        <li class="h-[15rem] w-1/2 max-w-[22.5rem] snap-start overflow-hidden bg-green-600/30 transition-all duration-200 pc:h-[22.5rem] pc:w-[32rem] pc:max-w-none">
-          <Image
-            src={gallery.default}
-            alt={`ảnh cưới cô dâu chú rể ${index}`}
-            class="relative left-1/2 h-full w-auto max-w-none -translate-x-1/2"
-          />
-        </li>
-      ))
-    }
-  </ul>
+    <ul
+      id="album"
+      class="flex h-[50rem] snap-start flex-col flex-wrap gap-[1.6rem] pc:mt-[4rem] pc:h-[49rem]"
+    >
+      {
+        shuffleArray(galleries).map((gallery, index) => (
+          <li class="h-[15rem] w-1/2 max-w-[22.5rem] snap-start overflow-hidden bg-green-600/30 transition-all duration-200 pc:h-[22.5rem] pc:w-[32rem] pc:max-w-none">
+            <Image
+              src={gallery.default}
+              alt={`ảnh cưới cô dâu chú rể ${index}`}
+              class="relative left-1/2 h-full w-auto max-w-none -translate-x-1/2"
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </section>
 <div class="overflow-hidden pc:h-[36vw] pc:min-h-[50rem]">
   <Image
