@@ -8,9 +8,6 @@ import react from "@astrojs/react"
 export default defineConfig({
   site: "https://anh-an-wedding.vercel.app/",
   integrations: [mdx(), sitemap(), tailwind(), react()],
-  experimental: {
-    assets: true,
-  },
   image: {
     service: sharpImageService(),
   },

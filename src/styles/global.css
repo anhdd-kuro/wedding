@@ -7,7 +7,8 @@
     @apply text-black scroll-smooth;
     @apply text-[62.5%] pc:text-[0.69vw] pc-lg:text-[62.5%];
 
-    &, &[lang="vi"] {
+    &,
+    &[lang="vi"] {
       @apply font-lexend;
     }
 
@@ -20,6 +21,20 @@
 @layer utilities {
   .flex-center {
     @apply flex items-center justify-center;
+  }
+
+  .scrollbar-always {
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 10px;
+      height: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.4);
+      -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
+    }
   }
 
   [class*="border-b-after"] {
@@ -82,7 +97,9 @@
   }
 
   .floating-effect {
-    animation: move-clouds 6s linear, swayWays 6s ease-in-out alternate;
+    animation:
+      move-clouds 6s linear,
+      swayWays 6s ease-in-out alternate;
   }
 }
 
