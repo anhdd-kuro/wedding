@@ -108,14 +108,14 @@ const t = useTranslations(lang)
   const album = document.getElementById("album")
 
   const hide = (elm: Element) => {
-    elm?.parentElement?.classList.add("opacity-0")
+    elm?.closest("li")?.classList.add("opacity-0")
     setTimeout(() => {
-      elm?.parentElement?.classList.add("hidden")
+      elm?.closest("li")?.classList.add("hidden")
     }, 200)
   }
 
   const show = (elm: Element) => {
-    elm?.parentElement?.classList.remove("hidden", "opacity-0")
+    elm?.closest("li")?.classList.remove("hidden", "opacity-0")
   }
 
   filterAll?.addEventListener("click", () => {
