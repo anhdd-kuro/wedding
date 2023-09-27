@@ -53,19 +53,19 @@ const t = useTranslations(lang)
   >
     <ul
       id="album"
-      class="flex h-[50rem] snap-start flex-col flex-wrap gap-[1.6rem] pc:mt-[4rem] pc:h-[49rem]"
+      class="flex h-[48rem] snap-start flex-col flex-wrap gap-[1.6rem] pc:mt-[4rem] pc:h-[49rem]"
     >
       {
         shuffleArray(galleries).map((gallery, index) => (
-          <li class="h-[15rem] w-2/3 max-w-[22.5rem] cursor-zoom-in snap-start bg-green-600/30 transition-all duration-200 pc:h-[22.5rem] pc:w-[32rem] pc:max-w-none">
+          <li class="h-[22rem] w-4/5 cursor-zoom-in snap-start bg-green-600/30 transition-all duration-200 pc:h-[22.5rem] pc:w-[32rem] pc:max-w-none">
             <div
-              class="group relative h-full w-full"
+              class="group relative h-full w-full overflow-hidden"
               data-thumbnail={`gallery_${index}`}
             >
               <Image
                 src={gallery.default}
                 alt={`ảnh cưới cô dâu chú rể ${index}`}
-                class="h-full w-full object-cover object-[top-center] align-middle"
+                class="relative left-1/2 h-full w-auto max-w-none -translate-x-1/2"
               />
             </div>
           </li>
@@ -88,7 +88,7 @@ const t = useTranslations(lang)
   <img
     src=""
     alt=""
-    class="h-full max-h-[80vh] w-full object-contain object-left-top"
+    class="h-full max-h-[70vh] w-full object-contain object-left-top"
   />
 </div>
 
