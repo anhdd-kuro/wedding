@@ -28,7 +28,7 @@ export const ui = {
       'Một lần nữa chúng mình lại phải xa nhau, "anh bạn thân" ở lại Nhật còn mình trở về Việt Nam theo đuổi con đường sự nghiệp của bản thân. Quãng thời gian kéo dài tưởng chừng như không có hồi kết. Bỗng 1 hôm, "anh bạn thân" xuất hiện trước mặt mình đầy bất ngờ, rồi chuyện gì đến cũng đã đến.',
     "story-5":
       "Cuối cùng, sau 8 năm quen nhau, câu chuyện của chúng mình đã rẽ sang 1 chương hoàn toàn mới. Chúng mình sẽ tiếp tục cùng nhau cố gắng để xây dựng tổ ấm và hy vọng sẽ được ở cạnh nhau mỗi ngày.",
-    qr: "QUÉT QR MỪNG HẠNH PHÚC CHO CÔ DÂU CHÚ RỂ!",
+    qr: "QUÉT QR MỪNG HẠNH PHÚC CHO CHÚNG MÌNH NHÉ!",
     covid: "Đại dịch Covid 19 🦠 bùng nổ",
     swipe: "Kéo hoặc vuốt sang để xem tiếp",
     backside: "Xem mặt sau",
