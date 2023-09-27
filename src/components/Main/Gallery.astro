@@ -47,7 +47,6 @@ const t = useTranslations(lang)
     </button>
   </div>
   <div
-    data-simplebar
     class="mt-[2rem] snap-x overflow-auto scroll-smooth"
     data-simplebar
     data-simplebar-auto-hide="false"
@@ -58,12 +57,17 @@ const t = useTranslations(lang)
     >
       {
         shuffleArray(galleries).map((gallery, index) => (
-          <li class="h-[15rem] w-1/2 max-w-[22.5rem] snap-start overflow-hidden bg-green-600/30 transition-all duration-200 pc:h-[22.5rem] pc:w-[32rem] pc:max-w-none">
-            <Image
-              src={gallery.default}
-              alt={`ảnh cưới cô dâu chú rể ${index}`}
-              class="relative left-1/2 h-full w-auto max-w-none -translate-x-1/2"
-            />
+          <li class="h-[15rem] w-2/3 max-w-[22.5rem] cursor-zoom-in snap-start bg-green-600/30 transition-all duration-200 pc:h-[22.5rem] pc:w-[32rem] pc:max-w-none">
+            <div
+              class="group relative h-full w-full"
+              data-thumbnail={`gallery_${index}`}
+            >
+              <Image
+                src={gallery.default}
+                alt={`ảnh cưới cô dâu chú rể ${index}`}
+                class="h-full w-full object-cover object-[top-center] align-middle"
+              />
+            </div>
           </li>
         ))
       }
@@ -75,6 +79,16 @@ const t = useTranslations(lang)
     src={subImage}
     alt="Ảnh cô dâu chủ rể"
     class="relative right-0 h-full w-full max-w-none object-cover"
+  />
+</div>
+<div
+  class="pointer-events-none fixed w-[60vw] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+  data-preview
+>
+  <img
+    src=""
+    alt=""
+    class="h-full max-h-[80vh] w-full object-contain object-left-top"
   />
 </div>
 
@@ -147,5 +161,50 @@ const t = useTranslations(lang)
     }
 
     album?.scrollTo({ left: 0 })
+  })
+</script>
+
+<script>
+  // Hover thumbnail to preview following mouse position
+  const isDesktop = window.innerWidth > 768 && window.innerHeight > 768
+
+  const thumbnails =
+    document.querySelectorAll<HTMLDivElement>("[data-thumbnail]")
+  const preview = document.querySelector<HTMLDivElement>("[data-preview]")
+
+  const xOffset = 5
+  const yOffset = 10
+
+  thumbnails.forEach((elm) => {
+    elm.addEventListener("mousemove", (e: MouseEvent) => {
+      if (!isDesktop) return
+
+      if (!preview) return
+      const imgElm = preview.querySelector("img")
+      if (!imgElm) return
+
+      const documentHeight = document.documentElement.clientHeight
+      const documentWidth = document.documentElement.clientWidth
+
+      let topRightConnerX = xOffset + preview.clientWidth
+      let topRightConnerY = yOffset + preview.clientHeight
+
+      topRightConnerX = Math.min(topRightConnerX + e.clientX, documentWidth)
+      topRightConnerY = Math.min(topRightConnerY + e.clientY, documentHeight)
+
+      const left = topRightConnerX - preview.clientWidth
+      const top = topRightConnerY - preview.clientHeight
+      imgElm.setAttribute("src", elm.querySelector("img")?.src || "")
+      preview.style.left = `${left + xOffset}px`
+      preview.style.top = `${top + yOffset}px`
+      preview.style.opacity = "1"
+      preview.style.zIndex = "999"
+    })
+
+    elm.addEventListener("mouseleave", () => {
+      if (!preview) return
+      preview.style.opacity = "0"
+      preview.style.zIndex = "-1"
+    })
   })
 </script>
