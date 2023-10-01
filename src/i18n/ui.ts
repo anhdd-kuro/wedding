@@ -21,11 +21,11 @@ export const ui = {
     "story-1":
       "Chúng mình lần đầu tiên gặp nhau tại một quán bán đồ gốm trong ngõ nhỏ ở trường Mỹ Thuật Công Nghiệp. Dẫn nhau đi la cà khắp các ngõ ở Hà Nội,rồi chúng mình thành 1 đôi từ khi nào không hay.",
     "story-2":
-      '"Anh bạn thân" lên đường đi Nhật 🇯🇵 với nhiều hoài bão ấp ủ. Và có lẽ đó là một trải nghiệm mà cả 2 đứa sẽ không bao giờ quên! Quãng thời gian yêu xa dài đằng đẵng hơn 2 năm trời xa cách, người ở Việt Nam 🇻🇳, người ở Nhật 🇯🇵. "',
+      '"Anh bạn thân" lên đường đi Nhật 🇯🇵 để gây dựng sự nghiệp cho bản thân. Có lẽ đó là một trải nghiệm mà cả 2 đứa sẽ không bao giờ quên! Quãng thời gian yêu xa hơn 2 năm trời, người ở Việt Nam 🇻🇳, người ở Nhật 🇯🇵.',
     "story-3":
       "Chúng mình đã có thể tái hợp tại Fukuoka - Nhật Bản. Thật may mắn rằng 2 đứa đã có thể cùng nhau vượt qua quãng thời gian khó khăn này.",
     "story-4":
-      'Một lần nữa chúng mình lại phải xa nhau, "anh bạn thân" ở lại Nhật còn mình trở về Việt Nam theo đuổi con đường sự nghiệp của bản thân. Quãng thời gian kéo dài tưởng chừng như không có hồi kết. Bỗng 1 hôm, "anh bạn thân" xuất hiện trước mặt mình đầy bất ngờ, rồi chuyện gì đến cũng đã đến.',
+      'Vậy là 2 đứa lại phải tạm thời xa cách, "anh bạn thân" ở lại Nhật còn mình trở về Việt Nam theo đuổi con đường sự nghiệp của bản thân. Quãng thời gian kéo dài tưởng chừng như không có hồi kết. Bỗng 1 hôm, "anh bạn thân" xuất hiện trước mặt mình đầy bất ngờ, rồi chuyện gì đến cũng đã đến.',
     "story-5":
       "Cuối cùng, sau 8 năm quen nhau, câu chuyện của chúng mình đã rẽ sang 1 chương hoàn toàn mới. Chúng mình sẽ tiếp tục cùng nhau cố gắng để xây dựng tổ ấm và hy vọng sẽ được ở cạnh nhau mỗi ngày.",
     qr: "MỪNG HẠNH PHÚC CHO CHÚNG MÌNH NHÉ!",
