@@ -19,6 +19,7 @@ const t = useTranslations(lang)
     <div
       class="glowing-effect flex-1 before:rounded-[3rem] before:opacity-40"
       data-selector="brideImg"
+      data-aos="zoom-out-up"
     >
       <div
         class="relative z-10 flex flex-row-reverse items-center justify-end gap-[2.6rem] rounded-[3rem] bg-white px-[4rem] py-[3rem] pc:flex-row"
@@ -46,13 +47,16 @@ const t = useTranslations(lang)
         </div>
       </div>
     </div>
-    <Icon
-      name="heart"
-      class="heart-beating-effect w-1/5 max-w-[8rem] pc:w-[5vw] [&_path]:fill-green-400"
-    />
+    <i data-aos="zoom-out">
+      <Icon
+        name="heart"
+        class="heart-beating-effect w-1/5 max-w-[8rem] pc:w-[5vw] [&_path]:fill-green-400"
+      />
+    </i>
     <div
       class="glowing-effect flex-1 before:rounded-[3rem] before:opacity-40"
       data-selector="groomImg"
+      data-aos="zoom-out-up"
     >
       <div
         class="relative z-10 flex items-center gap-[2.6rem] rounded-[3rem] bg-white px-[4rem] py-[3rem]"
@@ -84,11 +88,13 @@ const t = useTranslations(lang)
   </div>
   <p
     class="mt-[3rem] text-center font-cormorant text-[3.6rem] font-semibold tracking-wider pc:mt-[4.5rem] pc:text-[6rem]"
+    data-aos="fade-up"
   >
     Are getting married !
   </p>
   <p
     class="mt-[1rem] text-center text-[1.6rem] font-light tracking-widest pc:text-[2rem]"
+    data-aos="fade-up"
   >
     29.10.2023 - DAEWOO HOTEL HÀ NỘI
   </p>

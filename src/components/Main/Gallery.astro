@@ -18,15 +18,19 @@ const t = useTranslations(lang)
   id="gallery"
   class="bg-green-200 px-[2rem] py-[3rem] pc:px-[5vw] pc:py-[4vw]"
 >
-  <h3 class="text-[1.8rem] tracking-[1.4rem] text-green-400 pc:text-[2.2rem]">
+  <h3
+    class="text-[1.8rem] tracking-[1.4rem] text-green-400 pc:text-[2.2rem]"
+    data-aos="fade-up"
+  >
     GALLERY
   </h3>
   <h2
     class="font-cormorant text-[3.2rem] leading-[1.4em] tracking-widest text-black-light pc:text-[4.8rem]"
+    data-aos="fade-up"
   >
     OUR MEMORIES
   </h2>
-  <div class="mt-[3rem] flex flex-wrap gap-4 text-[1.6rem]">
+  <div class="mt-[3rem] flex flex-wrap gap-4 text-[1.6rem]" data-aos="fade-up">
     <button
       data-script="filterAll"
       class="whitespace-nowrap bg-green-400 px-4 py-2 text-white hover:bg-green-400 hover:text-white"
@@ -50,6 +54,7 @@ const t = useTranslations(lang)
     class="mt-[2rem] snap-x overflow-auto scroll-smooth"
     data-simplebar
     data-simplebar-auto-hide="false"
+    data-aos="fade-up"
   >
     <ul
       id="album"
@@ -74,7 +79,7 @@ const t = useTranslations(lang)
     </ul>
   </div>
 </section>
-<div class="overflow-hidden pc:h-[36vw] pc:min-h-[50rem]">
+<div class="overflow-hidden pc:h-[36vw] pc:min-h-[50rem]" data-aos="fade-up">
   <Image
     src={subImage}
     alt="Ảnh cô dâu chủ rể"

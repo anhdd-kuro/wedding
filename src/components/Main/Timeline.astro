@@ -16,7 +16,7 @@ const timelineJa = await Astro.glob<{ default: ImageMetadata }>(
 const lang = getLangFromUrl(Astro.url)
 ---
 
-<div class="overflow-hidden">
+<div class="overflow-hidden" data-aos="fade-up">
   <picture>
     <source media="(max-width: 1024px)" srcset={beOurGuestImgSP.src} />
     <Image
@@ -31,20 +31,28 @@ const lang = getLangFromUrl(Astro.url)
   class="bg-green-200 px-[2rem] py-[3rem] pc:px-[5vw] pc:py-[4vw]"
 >
   <div class="container mx-auto">
-    <h3 class="text-[1.6rem] tracking-[1.4rem] text-green-400 pc:text-[2.2rem]">
-      WEDDING
-    </h3>
-    <h2
-      class="font-cormorant text-[3.2rem] leading-[1.4em] tracking-widest text-black-light pc:text-[4.8rem]"
-    >
-      TIMELINE
-    </h2>
+    <div data-aos="fade-up">
+      <h3
+        class="text-[1.6rem] tracking-[1.4rem] text-green-400 pc:text-[2.2rem]"
+      >
+        WEDDING
+      </h3>
+      <h2
+        class="font-cormorant text-[3.2rem] leading-[1.4em] tracking-widest text-black-light pc:text-[4.8rem]"
+      >
+        TIMELINE
+      </h2>
+    </div>
     <div
       class="mt-[2rem] snap-x overflow-x-auto overflow-y-hidden pc:mt-[4rem] pc:max-w-[1440px]"
       data-simplebar
       data-simplebar-auto-hide="false"
     >
-      <ol class="flex w-[80rem] pc:w-auto">
+      <ol
+        class="flex w-[80rem] pc:w-auto"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+      >
         <li
           class="group relative w-1/2 cursor-context-menu snap-start pc:flex-1"
         >

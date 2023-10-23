@@ -10,10 +10,11 @@ const t = useTranslations(lang)
 
 <section id="our-story" class="bg-white pc:px-[6rem] pc:py-[8rem]">
   <div class="mx-auto max-w-[1260px] gap-[3.5rem] pc:flex">
-    <div class="mx-auto w-full max-w-[48rem] pc:w-1/2">
+    <div class="mx-auto w-full max-w-[48rem] pc:w-1/2" data-aos="zoom-in-right">
       <Image src={ourStoryImg} alt="Ảnh our story" class="w-full" />
     </div>
     <div
+      data-aos="zoom-in-left"
       class={clsx(
         "flex-1 leading-[1.8em] tracking-widest",
         lang !== "ja" ? "text-[1.4rem]" : "text-[1.6rem]"

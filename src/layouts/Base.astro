@@ -38,6 +38,8 @@ const lang = getLangFromUrl(Astro.url)
         border-radius: 8px;
       }
     </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   </head>
   <body>
     <slot />
@@ -49,5 +51,13 @@ const lang = getLangFromUrl(Astro.url)
     <script
       src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"
     ></script>
+    <script>
+      // @ts-ignore
+      // eslint-disable-next-line
+      AOS.init({
+        once: true,
+        duration: 600,
+      })
+    </script>
   </body>
 </html>
